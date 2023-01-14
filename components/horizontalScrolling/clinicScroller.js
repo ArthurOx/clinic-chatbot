@@ -30,7 +30,7 @@ export default function ClinicScroller({ children }) {
             >
                 <div>
                     {children.map((item) => {
-                        return <SwiperSlide className="card">
+                        return <SwiperSlide className="card" key={item.clinic.id}>
                             <div className="text-in-card">
                                 {item.clinic.description}
                             </div>

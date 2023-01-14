@@ -7,24 +7,28 @@ import ClinicScroller from '../components/horizontalScrolling/clinicScroller.js'
 const examples =
     [{
         clinic: {
+            id: 0,
             description: "description1",
             examples: ["example1", "example2", "example3"]
         }
     },
     {
         clinic: {
+            id: 1,
             description: "description2",
             examples: ["example3", "example4", "example5"]
         }
     },
     {
         clinic: {
+            id: 2,
             description: "description3",
             examples: ["example6", "example7", "example8"]
         }
     },
     {
         clinic: {
+            id: 3,
             description: "description4",
             examples: ["example3", "example3", "example5"]
         }
