@@ -1,6 +1,39 @@
 import React, { useState } from 'react';
-import Button from './button.js';
-import Dropdown from './dropdown.js';
+import DropDown from './dropdown.js';
+
+let rawLanguages = [
+    { "code": "en",
+      "language": "English"
+    },
+    { "code": "he",
+      "language": "Hebrew"
+    },
+    { "code": "ru",
+      "language": "Russian"
+    },
+    { "code": "am",
+      "language": "Amharic"
+    },
+    { "code": "ar",
+      "language": "Arabic"
+    },
+  ];
+
+const primaryLanguages = ["he", "am", "ru"];
+
+function loadLanguageList(primary) {
+    let primaryLanguages = [];
+    let otherLanguages = [];
+    for (let i = 0; i < rawLanguages.length; i++) {
+        if (primary.includes(rawLanguages[i]['code'])) {
+            primaryLanguages.push(rawLanguages[i]['language']);
+        }
+        else {
+            otherLanguages.push(rawLanguages[i]['language']);
+        }
+    }
+    return {primaryLanguages, otherLanguages};
+}
 
 export default function LanguagePicker(props) {
     const [visibility, setVisibility] = useState(true);
@@ -13,9 +46,12 @@ export default function LanguagePicker(props) {
     if (!visibility) {
         return null;
     }
+
+    const loadedLangs = loadLanguageList(primaryLanguages);
+
     return (
         <div>
-            <Dropdown handleSubmit={handleChange}>{["Arabic", "Indonesian"]}</Dropdown>
+            <DropDown handleSubmit={handleChange}>{loadedLangs.primaryLanguages}</DropDown>
         </div>
     );
 };

@@ -3,7 +3,8 @@ import { createCustomMessage } from 'react-chatbot-kit';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
-    const handleLanguagePicked = () => {
+    const handleLanguagePicked = (chosenLanguage) => {
+        console.log("chosen lang is: " + chosenLanguage);
         const introMessage = createCustomMessage('Intro', 'intro');
         setState((prev) => ({
             ...prev,
