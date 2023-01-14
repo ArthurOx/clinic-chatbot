@@ -1,38 +1,49 @@
-import React, { useState } from 'react';
+import React, { Children, useState } from 'react';
 import DropDown from './dropdown.js';
+const primaryLanguageCodes = ["he", "am", "ru"];
 
 let rawLanguages = [
     { "code": "en",
-      "language": "English"
+      "language": "English",
+      "nativeId": "English",
+      "LTR": true
     },
     { "code": "he",
-      "language": "Hebrew"
+      "language": "Hebrew",
+      "nativeId": "עברית",
+      "LTR": false
     },
     { "code": "ru",
-      "language": "Russian"
+      "language": "Russian",
+      "nativeId": "Русский",
+      "LTR": true
     },
     { "code": "am",
-      "language": "Amharic"
+      "language": "Amharic",
+      "nativeId": "አማርኛ",
+      "LTR": true
     },
     { "code": "ar",
-      "language": "Arabic"
+      "language": "Arabic",
+      "nativeId": "عربى",
+      "LTR": false
     },
   ];
 
-const primaryLanguages = ["he", "am", "ru"];
+console.log("raw languages are: " + rawLanguages);
 
 function loadLanguageList(primary) {
     let primaryLanguages = [];
     let otherLanguages = [];
     for (let i = 0; i < rawLanguages.length; i++) {
         if (primary.includes(rawLanguages[i]['code'])) {
-            primaryLanguages.push(rawLanguages[i]['language']);
+            primaryLanguages.push(rawLanguages[i]);
         }
         else {
-            otherLanguages.push(rawLanguages[i]['language']);
+            otherLanguages.push(rawLanguages[i]);
         }
     }
-    return {primaryLanguages, otherLanguages};
+    return {primaryLanguages, secondaryLanguages: otherLanguages};
 }
 
 export default function LanguagePicker(props) {
@@ -40,6 +51,7 @@ export default function LanguagePicker(props) {
 
     const handleChange = (chosenLanguage) => {
         setVisibility(false);
+        console.log("chosen lang is: " + chosenLanguage)
         props.actions.handleLanguagePicked(chosenLanguage);
     };
 
@@ -47,11 +59,11 @@ export default function LanguagePicker(props) {
         return null;
     }
 
-    const loadedLangs = loadLanguageList(primaryLanguages);
+    const loadedLangs = loadLanguageList(primaryLanguageCodes);
 
     return (
         <div>
-            <DropDown handleSubmit={handleChange}>{loadedLangs.primaryLanguages}</DropDown>
+            <DropDown handleSubmit={handleChange}>{loadedLangs}</DropDown>
         </div>
     );
 };

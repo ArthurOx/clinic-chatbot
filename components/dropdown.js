@@ -15,8 +15,12 @@ return (
       <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
 
       <Dropdown.Menu>
-        {children.map(item => (
-            <Dropdown.Item key={item} onClick={handleSubmit}>{item}</Dropdown.Item>
+        {children.primaryLanguages.map(item => (
+            <Dropdown.Item key={item['code']} onClick={handleSubmit}>{item['nativeId']}</Dropdown.Item>
+        ))}
+        <Dropdown.Divider />
+        {children.secondaryLanguages.map(item => (
+            <Dropdown.Item key={item['code']} onClick={handleSubmit}>{item['nativeId']}</Dropdown.Item>
         ))}
       </Dropdown.Menu>
     </Dropdown>
