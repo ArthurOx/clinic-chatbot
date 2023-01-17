@@ -9,13 +9,15 @@ export default function FrontWindow(props) {
     return (
         <div>
             <header className='App-header'>
-                <div className='logo'>
-                    <Image alt='briefcase-logo'
+                <div className='front-logo-box'>
+                    <Image className='briefcase-logo'
+                        alt='briefcase'
                         src={LogoImage}
                         width={156.31}
                         height={90}>
                     </Image>
-                    <Image alt='free-legal-aid'
+                    <Image className='free-legal-aid-logo'
+                        alt='free-legal-aid'
                         src={LogoTitle}
                         width={366}
                         height={61}>

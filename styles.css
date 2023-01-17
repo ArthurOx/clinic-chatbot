@@ -3,15 +3,26 @@ body {
     color: #2d2c2c;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    width: 395px;
+
+    /* border-style: ridge;
+    border-color: #757cce; */
 }
 
 .react-chatbot-kit-chat-container {
     position: relative;
+    width: auto;
+
+    /* border-style: ridge;
+    border-color: #1da044; */
 }
 
 .react-chatbot-kit-chat-inner-container {
     width: 390px;
     height: 100%;
+
+    /* border-style: dotted;
+    border-color: #a80e5b; */
 }
 
 .react-chatbot-kit-chat-header {
@@ -21,6 +32,9 @@ body {
     top: 115px;
     direction: rtl;
     background-color: #F5F3F1;
+
+    /* border-style: ridge;
+    border-color: #9173eb; */
 }
 
 .react-chatbot-kit-chat-input-container {
@@ -30,7 +44,13 @@ body {
 .react-chatbot-kit-chat-message-container {
     padding: 0;
     background-color: #F5F3F1;
-    height: 700px;
+
+    /* height: 780px; */
+    height: 600px;
+    overflow-x: hidden;
+
+    /* border-style: ridge;
+    border-color: #1da044; */
 }
 
 .react-chatbot-kit-chat-input {}
@@ -72,6 +92,52 @@ body {
 .react-chatbot-kit-error-header {}
 
 .react-chatbot-kit-error-docs {}
+
+.front-logo-box {
+    position:relative;
+    /* left: 30px; */
+    top: 100px;
+
+    /* border-style: dotted;
+    border-color: #1da044; */
+}
+
+.briefcase-logo {
+    /* border-style: dotted;
+    border-color: #763cd3; */
+}
+
+.free-legal-aid-logo {
+    /* border-style: dotted;
+    border-color: #eb6f0b; */
+}
+
+.lang-btn {
+    background-color: #303AAA;
+    border: #fff;
+    /* border-radius: 15%; */
+    position: relative;
+    margin: auto;
+    width: 320px;
+    height: 50px;
+    top: 265px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.custom-lang-btn-image {
+    left: 50%;
+    top: 10px;
+}
+
+.custom-ddm {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.custom-ddm-item {
+    height: 30px;
+}
 
 .card {
     width: 214px;
