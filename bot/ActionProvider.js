@@ -1,7 +1,8 @@
-import React from 'react';
-import { createCustomMessage } from 'react-chatbot-kit';
+import { createCustomMessage, createClientMessage } from 'react-chatbot-kit';
+import React, { useState, useEffect } from 'react';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
+    const [messageBar, showMessageBar] = useState(false);
 
     const handleLanguagePicked = () => {
         const introMessage = createCustomMessage('Intro', 'intro');
@@ -20,12 +21,29 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     };
 
     const handleClickedContinue = () => {
-        const botMessage = createChatBotMessage('123');
+        const botMessage = createChatBotMessage('would you like to contact a lawyer?');
+        const yesNoQuestion = createCustomMessage('yesNoQuestion', 'yesNoQuestion');
         setState((prev) => ({
             ...prev,
-            messages: [...prev.messages, botMessage],
+            messages: [...prev.messages, botMessage, yesNoQuestion],
         }));
     };
+
+    const handleYesNoAnswer = (answer) => {
+        const clientMessage = createClientMessage(answer);
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, clientMessage],
+        }));
+    };
+
+    useEffect(() => {
+        if (messageBar) {
+            document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0].style.display = 'flex';
+        } else {
+            document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0].style.display = 'none';
+        }
+    }, [messageBar]);
 
     // Put the handleHello and handleDog function in the actions object to pass to the MessageParser
     return (
@@ -35,7 +53,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                     actions: {
                         handleLanguagePicked,
                         handleStartConversation,
-                        handleClickedContinue
+                        handleClickedContinue,
+                        handleYesNoAnswer
                     },
                 });
             })}
