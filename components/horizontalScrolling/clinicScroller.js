@@ -6,17 +6,19 @@ import Example from './examples';
 
 
 
-export default function ClinicScroller({ children }) {
+export default function ClinicScroller({ children, actions }) {
     const [selected, setSelected] = useState(children[0].clinic.examples);
+    const [slide, setSlide] = useState(-1);
+    const [button, setButton] = useState(false);
 
     const slideChanged = (slide) => {
         let index = slide.activeIndex;
         setSelected(children[index].clinic.examples);
-        console.log('slide change');
     }
 
     const handleClick = () => {
-        console.log('clicked');
+        actions.handleClickedContinue();
+        setButton(true);
     }
 
     return (
@@ -27,11 +29,15 @@ export default function ClinicScroller({ children }) {
                 centeredSlides={true}
                 onSlideChange={(slide) => slideChanged(slide)}
                 onSwiper={(swiper) => console.log(swiper)}
+                slideToClickedSlide={true}
             >
                 <div>
                     {children.map((item) => {
-                        return <SwiperSlide className="card" key={item.clinic.id}>
-                            <div className="text-in-card">
+                        return <SwiperSlide
+                            className={(item.clinic.id != slide) ? "card" : "card-selected"}
+                            key={item.clinic.id}
+                            onClick={() => setSlide(item.clinic.id)}>
+                            <div className={(item.clinic.id != slide) ? "text-in-card" : "text-in-card-selected"}>
                                 {item.clinic.description}
                             </div>
                         </SwiperSlide>
@@ -39,7 +45,7 @@ export default function ClinicScroller({ children }) {
                 </div>
             </Swiper >
             <Example>{selected}</Example>
-            <Button handleClick={handleClick}>Continue</Button>
+            <Button className="continue-button" handleClick={handleClick} isDisabled={button}>Continue</Button>
         </>
     );
 

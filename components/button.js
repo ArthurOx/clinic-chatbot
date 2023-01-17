@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-export default function Button({ children, handleClick }) {
+export default function Button({ children, className, handleClick, isDisabled }) {
 
     return (
-        <button onClick={() => handleClick(children)} style={{ marginBottom: "15px" }}>
+        <button className={className} onClick={() => handleClick(children)} style={{ marginBottom: "15px" }} disabled={isDisabled}>
             {children}
         </button>
     )
