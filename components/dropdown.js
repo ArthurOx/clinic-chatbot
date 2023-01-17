@@ -12,8 +12,9 @@ export default function DropDown({ children, handleSubmit }) {
 return (
     // <select id="dropDownSelector" onChange={handleSubmit}></select>
     <Dropdown onSelect={handleSubmit}>
-      <Dropdown.Toggle variant="success" id="dropdown-basic"  className='lang-btn'>
-        <Image className='custom-lang-btn-image' alt='translations-logo'
+      <Dropdown.Toggle className='lang-btn'>
+        <Image className='custom-lang-btn-image' 
+          alt='translations-logo'
           src={TransLogo}
           width={42.61}
           height={32.76}>
