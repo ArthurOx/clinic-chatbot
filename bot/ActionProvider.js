@@ -28,7 +28,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             ...prev,
             messages: [...prev.messages, botMessage, yesNoQuestion],
         }));
-    };
+    }
 
     const handleYesNoAnswer = (answer) => {
         const clientMessage = createClientMessage(answer);
@@ -36,7 +36,37 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             ...prev,
             messages: [...prev.messages, clientMessage],
         }));
+
+        if (answer === "Yes") {
+            askName();
+        }
     };
+
+    const askName = () => {
+        const nameQuestion = createChatBotMessage('What is your name?');
+        showMessageBar(true);
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, nameQuestion],
+        }));
+    }
+
+    const askQuestion = (question) => {
+        const nameQuestion = createChatBotMessage(question);
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, nameQuestion],
+        }));
+    }
+
+    const endConversation = () => {
+        showMessageBar(false);
+        const endMessage = createChatBotMessage('Thank you for contacting us. We will get back to you shortly.');
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, endMessage],
+        }));
+    }
 
     useEffect(() => {
         if (messageBar) {
@@ -55,7 +85,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                         handleLanguagePicked,
                         handleStartConversation,
                         handleClickedContinue,
-                        handleYesNoAnswer
+                        handleYesNoAnswer,
+                        askQuestion,
+                        endConversation
                     },
                 });
             })}
