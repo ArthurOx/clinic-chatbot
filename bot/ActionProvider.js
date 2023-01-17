@@ -13,7 +13,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     };
 
-    const handleStartConversation = () => {
+    const handleStartConversation = (event) => {
+        event.currentTarget.disabled = true;
         const botMessage = createCustomMessage('Test', 'scroller');
         setState((prev) => ({
             ...prev,
