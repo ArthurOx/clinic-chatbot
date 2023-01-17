@@ -4,11 +4,12 @@ import React, { useState, useEffect } from 'react';
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [messageBar, showMessageBar] = useState(false);
 
-    const handleLanguagePicked = () => {
+    const handleLanguagePicked = (chosenLanguage) => {
+        console.log("chosen language is: " + chosenLanguage);
         const introMessage = createCustomMessage('Intro', 'intro');
         setState((prev) => ({
             ...prev,
-            messages: [...prev.messages, introMessage],
+            messages: [introMessage],
         }));
     };
 
