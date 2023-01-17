@@ -1,5 +1,6 @@
 import React from 'react';
 import { createCustomMessage } from 'react-chatbot-kit';
+import { animateScroll as scroll } from 'react-scroll'
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
@@ -12,6 +13,13 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     };
 
+    const scrollToBottom = () => {
+        scroll.scrollToBottom({
+          duration: 500,
+          smooth: 'easeInOutQuart'
+        });
+      }
+
     const handleStartConversation = (event) => {
         event.currentTarget.disabled = true;
         const botMessage = createCustomMessage('Test', 'scroller');
@@ -19,6 +27,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             ...prev,
             messages: [...prev.messages, botMessage],
         }));
+        scrollToBottom(); //smooth scrolling function that doesn't work right now :(
     };
 
     // Put the handleHello and handleDog function in the actions object to pass to the MessageParser

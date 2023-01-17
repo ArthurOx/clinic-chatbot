@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Button from '../button';
+import { Button } from 'react-bootstrap';
 import Example from './examples';
 
 
@@ -30,16 +30,20 @@ export default function ClinicScroller({ children }) {
             >
                 <div>
                     {children.map((item) => {
-                        return <SwiperSlide className="card" key={item.clinic.id}>
-                            <div className="text-in-card">
-                                {item.clinic.description}
-                            </div>
-                        </SwiperSlide>
+                        return (
+                            <SwiperSlide className="card" key={item.clinic.id}>
+                                <div className="card-item">
+                                    <p className="text-in-card">
+                                        {item.clinic.description}
+                                    </p>
+                                </div>
+                            </SwiperSlide>
+                        ) 
                     })}
                 </div>
             </Swiper >
             <Example>{selected}</Example>
-            <Button handleClick={handleClick}>Continue</Button>
+            <Button className='custom_btn custome-continue_btn' onClick={handleClick}>Continue</Button>
         </>
     );
 

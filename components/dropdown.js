@@ -12,7 +12,7 @@ export default function DropDown({ children, handleSubmit }) {
 return (
     // <select id="dropDownSelector" onChange={handleSubmit}></select>
     <Dropdown onSelect={handleSubmit}>
-      <Dropdown.Toggle className='lang-btn'>
+      <Dropdown.Toggle className='custom_btn custom-lang-btn'>
         <Image className='custom-lang-btn-image' 
           alt='translations-logo'
           src={TransLogo}
@@ -31,29 +31,5 @@ return (
       </Dropdown.Menu>
     </Dropdown>
   );
-
-    // return (
-    //     <label>
-    //         <select onChange={handleSubmit}>
-    //             {first.map(item => (
-    //                 <option key={item} value={item}>{item}</option>
-    //             ))}
-    //             <option disabled class="seperator">────────</option>
-    //             {second.map(item => (
-    //                 <option key={item} value={item}>{item}</option>
-    //             ))}
-    //         </select>
-    //     </label>
-    // )
-
-    // return (
-    //     <label>
-    //         <select onChange={handleSubmit}>
-    //             <InnerDropDown>{children}</InnerDropDown>
-    //             <option disabled class="seperator">────────</option>
-    //             <InnerDropDown>{children}</InnerDropDown>
-    //         </select>
-    //     </label>
-    // )
 }
 

@@ -11,7 +11,7 @@ export default function Intro(props) {
         <div className='intro-page'>
             <div className='intro-item'>
                 <div className='intro-item-title'>
-                    <h1 className='intro-title'>עזרה משפטית בחינם</h1>
+                    <h1 className='intro-title'><b>עזרה משפטית בחינם</b></h1>
                 </div>
                 <div className='intro-item-content'>
                     <p className='intro-content'>נמצא כאן כל המידע הרלוונטי להגשת פנייה במספר שלבים קצרים</p>
@@ -23,7 +23,7 @@ export default function Intro(props) {
                 width={105.91}
                 height={108.98}>
             </Image>
-            <Button className='get-started-btn' onClick={props.actions.handleStartConversation}>בואו נתחיל!</Button>
+            <Button className='custom_btn custom-get-started-btn' onClick={props.actions.handleStartConversation}>בואו נתחיל!</Button>
         </div>
     )
 }

@@ -49,8 +49,17 @@ body {
     height: 600px;
     overflow-x: hidden;
 
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
     /* border-style: ridge;
     border-color: #1da044; */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar {
+    display: none;
 }
 
 .react-chatbot-kit-chat-input {}
@@ -112,12 +121,15 @@ body {
     border-color: #eb6f0b; */
 }
 
-.lang-btn {
+.custom_btn {
     background-color: #303AAA;
     border: #fff;
-    /* border-radius: 15%; */
+    border-radius: 20px;
     position: relative;
     margin: auto;
+}
+
+.custom-lang-btn {
     width: 320px;
     height: 50px;
     top: 265px;
@@ -133,6 +145,15 @@ body {
 .custom-ddm {
     max-height: 200px;
     overflow-y: scroll;
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.custom-ddm::-webkit-scrollbar {
+    display: none;
 }
 
 .custom-ddm-item {
@@ -143,8 +164,8 @@ body {
     width: 360px;
     height: auto;
 
-    border-style: dotted;
-    border-color: #eb6f0b;
+    /* border-style: dotted;
+    border-color: #eb6f0b; */
 }
 
 .intro-item {
@@ -154,16 +175,15 @@ body {
     width: 332px;
     height: 380px;
 
-    border-radius: 15px;
-    border-style: dotted;
-    border-color: #1e0beb;
+    border-radius: 20px;
+    border: 2px solid #303AAA;
 }
 
 .intro-item-title {
     width: 282px;
     height: 201px;
-    border-style: dotted;
-    border-color: #0bebd1;
+    /* border-style: dotted;
+    border-color: #0bebd1; */
 }
 
 .intro-title {
@@ -171,34 +191,33 @@ body {
     font-size: 50px;
     color: #303AAA;
 
-    border-style: dotted;
-    border-color: #1e0beb;
+    /* border-style: dotted;
+    border-color: #1e0beb; */
 }
 
 .intro-item-content {
 
 
-    border-style: dotted;
-    border-color: #eb1e0b;
+    /* border-style: dotted;
+    border-color: #eb1e0b; */
 }
 
 .intro-content {
     text-align: right;
     font-size: large;
 
-    border-style: dotted;
-    border-color: #eb8e0b;
+    /* border-style: dotted;
+    border-color: #eb8e0b; */
 }
 
 .custom-scroll-logo-image {
     /* position: relative; */
-    display: block;
-
+/* 
     border-style: dashed;
-    border-color: #2d2c2c;
+    border-color: #2d2c2c; */
 }
 
-.get-started-btn {
+.custom-get-started-btn {
     background-color: #303AAA;
     border: #F5F3F1;
     margin: auto;
@@ -207,11 +226,11 @@ body {
     height: 40px;
     border-radius: 25px;
 
-    border-style: dotted;
-    border-color: #fefeff;
+    /* border-style: dotted;
+    border-color: #fefeff; */
 }
 
-.get-started-btn:disabled {
+.custom-get-started-btn:disabled {
     /* try to make it look regular and not grey */
 }
 
@@ -222,10 +241,22 @@ body {
     border-radius: 20px;
     background-color: #f5f3f1;
     box-sizing: border-box;
+    border-right: 7px double #303AAA;
+    border-bottom: 7px double #303AAA;
     left: 55px;
     margin-left: 11px;
     word-wrap: break-word;
     padding-top: 20px;
+    overflow-y: scroll;
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.card::-webkit-scrollbar {
+    display: none;
 }
 
 .text-in-card {
@@ -245,6 +276,7 @@ body {
     border-radius: 15px;
     background-color: #f5f3f1;
     box-sizing: border-box;
+    box-shadow: 5px 5px;
     word-wrap: break-word;
     margin-top: 16px;
     word-wrap: break-word;
@@ -271,4 +303,8 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+}
+
+.custome-continue_btn {
+    margin-top: 56.65px;
 }
