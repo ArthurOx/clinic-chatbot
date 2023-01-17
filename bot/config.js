@@ -1,7 +1,7 @@
 import { createChatBotMessage, createCustomMessage } from 'react-chatbot-kit';
-import LanguagePicker from '../components/languagePicker.js';
 import Intro from '../components/intro/intro.js';
 import ClinicScroller from '../components/horizontalScrolling/clinicScroller.js';
+import FrontWindow from '../components/frontWindow.js';
 
 // todo: replace with data from supabase
 const examples =
@@ -35,7 +35,7 @@ const examples =
     }];
 
 const config = {
-    initialMessages: [createCustomMessage('pickLanguage', 'languagePicker')],
+    initialMessages: [createCustomMessage('pickLanguage', 'frontWindow')],
     widgets: [
         {
             widgetName: 'IntroScreen',
@@ -43,7 +43,7 @@ const config = {
         },
     ],
     customMessages: {
-        languagePicker: (props) => <LanguagePicker {...props} />,
+        frontWindow: (props) => <FrontWindow {...props} />,
         intro: (props) => <Intro {...props} />,
         scroller: (props) => <ClinicScroller {...props}>{examples}</ClinicScroller>,
     }

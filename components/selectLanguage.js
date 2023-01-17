@@ -1,34 +1,8 @@
 import React, { Children, useState } from 'react';
 import DropDown from './dropdown.js';
-const primaryLanguageCodes = ["he", "am", "ru"];
-
-let rawLanguages = [
-    { "code": "en",
-      "language": "English",
-      "nativeId": "English",
-      "LTR": true
-    },
-    { "code": "he",
-      "language": "Hebrew",
-      "nativeId": "עברית",
-      "LTR": false
-    },
-    { "code": "ru",
-      "language": "Russian",
-      "nativeId": "Русский",
-      "LTR": true
-    },
-    { "code": "am",
-      "language": "Amharic",
-      "nativeId": "አማርኛ",
-      "LTR": true
-    },
-    { "code": "ar",
-      "language": "Arabic",
-      "nativeId": "عربى",
-      "LTR": false
-    },
-  ];
+import rawLanguages from './no_missing_langs.json'
+// import rawLanguages from './data.json'
+const primaryLanguageCodes = ["he", "am", "ru", "en", "ar"];
 
 console.log("raw languages are: " + rawLanguages);
 
@@ -46,7 +20,7 @@ function loadLanguageList(primary) {
     return {primaryLanguages, secondaryLanguages: otherLanguages};
 }
 
-export default function LanguagePicker(props) {
+export default function SelectLanguage(props) {
     const [visibility, setVisibility] = useState(true);
 
     const handleChange = (chosenLanguage) => {
