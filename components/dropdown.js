@@ -1,4 +1,5 @@
-import { Dropdown } from 'react-bootstrap/Dropdown';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Dropdown from 'react-bootstrap/Dropdown';
 import { DropdownButton } from 'react-bootstrap';
 import Image from 'next/image';
 import TransLogo from '../resources/translation_logo.svg'
@@ -29,5 +30,29 @@ return (
       </Dropdown.Menu>
     </Dropdown>
   );
+
+    // return (
+    //     <label>
+    //         <select onChange={handleSubmit}>
+    //             {first.map(item => (
+    //                 <option key={item} value={item}>{item}</option>
+    //             ))}
+    //             <option disabled class="seperator">────────</option>
+    //             {second.map(item => (
+    //                 <option key={item} value={item}>{item}</option>
+    //             ))}
+    //         </select>
+    //     </label>
+    // )
+
+    // return (
+    //     <label>
+    //         <select onChange={handleSubmit}>
+    //             <InnerDropDown>{children}</InnerDropDown>
+    //             <option disabled class="seperator">────────</option>
+    //             <InnerDropDown>{children}</InnerDropDown>
+    //         </select>
+    //     </label>
+    // )
 }
 
