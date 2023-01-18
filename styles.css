@@ -271,8 +271,8 @@ body {
 }
 
 .custom-scroll-logo-image {
-    /* position: relative; */
-    /* 
+    /* position: relative; 
+    
     border-style: dashed;
     border-color: #2d2c2c; */
 }
@@ -403,7 +403,7 @@ body {
     /* border-style: dotted; */
 }
 
-.yes-no-button {
+.yes-no-button { /* should look like the example buttons! change that later :) */
     width: 100px;
     height: 39px;
     font-weight: 700;
