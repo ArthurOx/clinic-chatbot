@@ -5,7 +5,7 @@ import Image from 'next/image';
 import ScrollLogo from '../../resources/scroll.svg';
 
 // Usually when waiting for some data to load
-export default function Intro(props) {
+export default function Intro({ actions, textData }) {
 
     return (
         <div className='intro-page'>
@@ -17,13 +17,13 @@ export default function Intro(props) {
                     <p className='intro-content'>נמצא כאן כל המידע הרלוונטי להגשת פנייה במספר שלבים קצרים</p>
                 </div>
             </div>
-            <Image className='custom-scroll-logo-image' 
+            <Image className='custom-scroll-logo-image'
                 alt='scroll-logo'
                 src={ScrollLogo}
                 width={105.91}
                 height={108.98}>
             </Image>
-            <Button className='get-started-btn' onClick={props.actions.handleStartConversation}>בואו נתחיל!</Button>
+            <Button className='get-started-btn' onClick={actions.handleStartConversation}>בואו נתחיל!</Button>
         </div>
     )
 }

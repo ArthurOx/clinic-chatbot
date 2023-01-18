@@ -17,7 +17,7 @@ function loadLanguageList(primary) {
             otherLanguages.push(rawLanguages[i]);
         }
     }
-    return {primaryLanguages, secondaryLanguages: otherLanguages};
+    return { primaryLanguages, secondaryLanguages: otherLanguages };
 }
 
 export default function SelectLanguage(props) {
@@ -25,7 +25,7 @@ export default function SelectLanguage(props) {
 
     const handleChange = (chosenLanguage) => {
         setVisibility(false);
-        console.log("chosen lang is: " + chosenLanguage)
+        console.log("chosen lang is: " + chosenLanguage);
         props.actions.handleLanguagePicked(chosenLanguage);
     };
 

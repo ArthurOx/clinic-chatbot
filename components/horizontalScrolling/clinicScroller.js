@@ -6,14 +6,14 @@ import Example from './examples';
 
 
 
-export default function ClinicScroller({ children, actions }) {
-    const [selected, setSelected] = useState(children[0].clinic.examples);
+export default function ClinicScroller({ children, actions, textData }) {
+    const [selected, setSelected] = useState(textData[0].clinic.examples);
     const [slide, setSlide] = useState(-1);
     const [button, setButton] = useState(false);
 
     const slideChanged = (slide) => {
         let index = slide.activeIndex;
-        setSelected(children[index].clinic.examples);
+        setSelected(textData[index].clinic.examples);
     }
 
     const handleClick = () => {
@@ -32,7 +32,7 @@ export default function ClinicScroller({ children, actions }) {
                 slideToClickedSlide={true}
             >
                 <div>
-                    {children.map((item) => {
+                    {textData.map((item) => {
                         return <SwiperSlide
                             className={(item.clinic.id != slide) ? "card" : "card-selected"}
                             key={item.clinic.id}

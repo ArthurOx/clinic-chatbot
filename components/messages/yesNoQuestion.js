@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../button';
 
-export default function YesNoQuestion({ children, actions }) {
+export default function YesNoQuestion({ children, actions, textData }) {
     const [visibility, setVisibility] = useState(false);
 
     const handleClick = (answer) => {

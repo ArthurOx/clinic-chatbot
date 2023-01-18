@@ -4,37 +4,6 @@ import ClinicScroller from '../components/horizontalScrolling/clinicScroller.js'
 import YesNoQuestion from '../components/messages/yesNoQuestion.js';
 import FrontWindow from '../components/frontWindow.js';
 
-// todo: replace with data from supabase
-const examples =
-    [{
-        clinic: {
-            id: 0,
-            description: "description1",
-            examples: ["example1", "example2", "example3"]
-        }
-    },
-    {
-        clinic: {
-            id: 1,
-            description: "description2",
-            examples: ["example3", "example4", "example5"]
-        }
-    },
-    {
-        clinic: {
-            id: 2,
-            description: "description3",
-            examples: ["example6", "example7", "example8"]
-        }
-    },
-    {
-        clinic: {
-            id: 3,
-            description: "description4",
-            examples: ["example3", "example3", "example5"]
-        }
-    }];
-
 const config = {
     initialMessages: [createCustomMessage('pickLanguage', 'frontWindow')],
     widgets: [
@@ -45,9 +14,9 @@ const config = {
     ],
     customMessages: {
         frontWindow: (props) => <FrontWindow {...props} />,
-        intro: (props) => <Intro {...props} />,
-        scroller: (props) => <ClinicScroller {...props}>{examples}</ClinicScroller>,
-        yesNoQuestion: (props) => <YesNoQuestion {...props} />
+        intro: (props) => <Intro {...props} textData={props.actions.textData} />,
+        scroller: (props) => <ClinicScroller {...props} textData={props.actions.textData}></ClinicScroller>,
+        yesNoQuestion: (props) => <YesNoQuestion {...props} textData={props.actions.textData} />
     },
     customComponents: {
         botAvatar: () => null,

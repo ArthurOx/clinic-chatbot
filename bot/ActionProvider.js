@@ -3,9 +3,40 @@ import React, { useState, useEffect } from 'react';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [messageBar, showMessageBar] = useState(false);
+    const [language, setLanguage] = useState('');
+    const [textData, setTextData] = useState({});
 
     const handleLanguagePicked = (chosenLanguage) => {
-        console.log("chosen language is: " + chosenLanguage);
+        setLanguage(chosenLanguage);
+        const dataInLanguage = [{
+            clinic: {
+                id: 0,
+                description: "description1",
+                examples: ["example1", "example2", "example3"]
+            }
+        },
+        {
+            clinic: {
+                id: 1,
+                description: "description2",
+                examples: ["example3", "example4", "example5"]
+            }
+        },
+        {
+            clinic: {
+                id: 2,
+                description: "description3",
+                examples: ["example6", "example7", "example8"]
+            }
+        },
+        {
+            clinic: {
+                id: 3,
+                description: "description4",
+                examples: ["example3", "example3", "example5"]
+            }
+        }];
+        setTextData(dataInLanguage);
         const introMessage = createCustomMessage('Intro', 'intro');
         setState((prev) => ({
             ...prev,
@@ -77,7 +108,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }
     }, [messageBar]);
 
-    // Put the handleHello and handleDog function in the actions object to pass to the MessageParser
     return (
         <div>
             {React.Children.map(children, (child) => {
@@ -88,8 +118,10 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                         handleClickedContinue,
                         handleYesNoAnswer,
                         askQuestion,
-                        endConversation
-                    },
+                        endConversation,
+                        setLanguage,
+                        textData
+                    }
                 });
             })}
         </div>
