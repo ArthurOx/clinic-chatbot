@@ -1,3 +1,3 @@
 export const SUPABASE_URL = "https://hytwotrwicehsgalrxgp.supabase.co";
-export const SUPABASE_SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5dHdvdHJ3aWNlaHNnYWxyeGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzI3MzY4MzMsImV4cCI6MTk4ODMxMjgzM30.8kztbNEJd_9pWAfFEeHN6vfk9N5PnRaEwVVt94v4DV4"
+export const SUPABASE_SERVICE_KEY = ""
 

@@ -19,52 +19,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const handleLanguagePicked = async (chosenLanguage) => {
         setLanguage(chosenLanguage);
         const data = await getData(chosenLanguage);
-        const dataInLanguage = {
-            clinicCards: [{
-                clinic: {
-                    id: 0,
-                    description: "description1",
-                    examples: ["example1", "example2", "example3"]
-                }
-            },
-            {
-                clinic: {
-                    id: 1,
-                    description: "description2",
-                    examples: ["example3", "example4", "example5"]
-                }
-            },
-            {
-                clinic: {
-                    id: 2,
-                    description: "description3",
-                    examples: ["example6", "example7", "example8"]
-                }
-            },
-            {
-                clinic: {
-                    id: 3,
-                    description: "description4",
-                    examples: ["example3", "example3", "example5"]
-                }
-            }],
-            intro: {
-                introTitle: "introTitle",
-                introText: "introText",
-                introButton: "introButton"
-            },
-            exampleText: "exampleText",
-            continueText: "continueText",
-            contactQuestion: {
-                question: "contactQuestion",
-                yes: "yes",
-                no: "no"
-            },
-            phoneQuestion: "Phone?",
-            ageQuestion: "Age?",
-            helpQuestion: "What can we help you with?",
-            endConversation: "endConversation"
-        };
+        const dataInLanguage = data[0].content;
         setTextData(dataInLanguage);
         const introMessage = createCustomMessage('Intro', 'intro');
         setState((prev) => ({
