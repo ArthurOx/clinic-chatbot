@@ -9,16 +9,10 @@ import Example from './examples';
 export default function ClinicScroller({ children, actions, textData }) {
     const [selected, setSelected] = useState(textData.clinicCards[0].clinic.examples);
     const [slide, setSlide] = useState(-1);
-    const [button, setButton] = useState(false);
 
     const slideChanged = (slide) => {
         let index = slide.activeIndex;
         setSelected(textData.clinicCards[index].clinic.examples);
-    }
-
-    const handleClick = () => {
-        actions.handleClickedContinue();
-        setButton(true);
     }
 
     return (
@@ -45,7 +39,7 @@ export default function ClinicScroller({ children, actions, textData }) {
                 </div>
             </Swiper >
             <Example>{selected}</Example>
-            <Button className="continue-button" onClick={handleClick} isDisabled={button}>{textData.continueText}</Button>
+            <Button className="continue-button" onClick={(e) => actions.handleClickedContinue(e)} >{textData.continueText}</Button>
         </>
     );
 

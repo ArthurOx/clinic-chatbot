@@ -7,6 +7,7 @@ import ScrollLogo from '../../resources/scroll.svg';
 // Usually when waiting for some data to load
 export default function Intro({ actions, textData }) {
 
+
     return (
         <div className='intro-page'>
             <div className='intro-item'>
@@ -23,7 +24,7 @@ export default function Intro({ actions, textData }) {
                 width={105.91}
                 height={108.98}>
             </Image>
-            <Button className='get-started-btn' onClick={actions.handleStartConversation}>{textData.intro.introButton}</Button>
+            <Button className='get-started-btn' onClick={(e) => actions.handleStartConversation(e)}>{textData.intro.introButton}</Button>
         </div>
     )
 }
