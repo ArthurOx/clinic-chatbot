@@ -11,10 +11,10 @@ export default function Intro({ actions, textData }) {
         <div className='intro-page'>
             <div className='intro-item'>
                 <div className='intro-item-title'>
-                    <h1 className='intro-title'>עזרה משפטית בחינם</h1>
+                    <h1 className='intro-title'>{textData.intro.introTitle}</h1>
                 </div>
                 <div className='intro-item-content'>
-                    <p className='intro-content'>נמצא כאן כל המידע הרלוונטי להגשת פנייה במספר שלבים קצרים</p>
+                    <p className='intro-content'>{textData.intro.introText}</p>
                 </div>
             </div>
             <Image className='custom-scroll-logo-image'
@@ -23,7 +23,7 @@ export default function Intro({ actions, textData }) {
                 width={105.91}
                 height={108.98}>
             </Image>
-            <Button className='get-started-btn' onClick={actions.handleStartConversation}>בואו נתחיל!</Button>
+            <Button className='get-started-btn' onClick={actions.handleStartConversation}>{textData.intro.introButton}</Button>
         </div>
     )
 }

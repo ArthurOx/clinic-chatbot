@@ -7,13 +7,13 @@ import Example from './examples';
 
 
 export default function ClinicScroller({ children, actions, textData }) {
-    const [selected, setSelected] = useState(textData[0].clinic.examples);
+    const [selected, setSelected] = useState(textData.clinicCards[0].clinic.examples);
     const [slide, setSlide] = useState(-1);
     const [button, setButton] = useState(false);
 
     const slideChanged = (slide) => {
         let index = slide.activeIndex;
-        setSelected(textData[index].clinic.examples);
+        setSelected(textData.clinicCards[index].clinic.examples);
     }
 
     const handleClick = () => {
@@ -32,7 +32,7 @@ export default function ClinicScroller({ children, actions, textData }) {
                 slideToClickedSlide={true}
             >
                 <div>
-                    {textData.map((item) => {
+                    {textData.clinicCards.map((item) => {
                         return <SwiperSlide
                             className={(item.clinic.id != slide) ? "card" : "card-selected"}
                             key={item.clinic.id}
@@ -44,8 +44,8 @@ export default function ClinicScroller({ children, actions, textData }) {
                     })}
                 </div>
             </Swiper >
-            <Example>{selected}</Example>
-            <Button className="continue-button" handleClick={handleClick} isDisabled={button}>Continue</Button>
+            <Example exampleText={textData.exampleText}>{selected}</Example>
+            <Button className="continue-button" handleClick={handleClick} isDisabled={button}>{textData.continueText}</Button>
         </>
     );
 
