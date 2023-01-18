@@ -4,8 +4,6 @@ import rawLanguages from './no_missing_langs.json'
 // import rawLanguages from './data.json'
 const primaryLanguageCodes = ["he", "am", "ru", "en", "ar"];
 
-console.log("raw languages are: " + rawLanguages);
-
 function loadLanguageList(primary) {
     let primaryLanguages = [];
     let otherLanguages = [];
