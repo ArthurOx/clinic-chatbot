@@ -53,7 +53,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     };
 
-    const handleClickedContinue = () => {
+    const handleClickedContinue = (event) => {
+        event.currentTarget.disabled = true;
         const botMessage = createChatBotMessage('would you like to contact a lawyer?');
         const yesNoQuestion = createCustomMessage('yesNoQuestion', 'yesNoQuestion');
         setState((prev) => ({
@@ -74,6 +75,17 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }
     };
 
+    const handleAgeAnswer = (answer) => {
+        console.log("age answer: " + answer);
+        const clientMessage = createClientMessage(answer);
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, clientMessage],
+        }));
+
+        // askQuestion();
+    }
+
     const askName = () => {
         const nameQuestion = createChatBotMessage('What is your name?');
         showMessageBar(true);
@@ -83,11 +95,23 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     }
 
-    const askQuestion = (question) => {
-        const nameQuestion = createChatBotMessage(question);
+    const askPoleQuestion =(question) => { //like age
+        const askedQuestion = createChatBotMessage(question);
+        // const poleQuestion = createCustomMessage(`handle${question}Answer`, `handle${question}Answer`);
+        const poleQuestion = createCustomMessage('ageQuestion', 'ageQuestion');
+        showMessageBar(false);
         setState((prev) => ({
             ...prev,
-            messages: [...prev.messages, nameQuestion],
+            messages: [...prev.messages, askedQuestion, poleQuestion],
+        }));
+    }
+
+    const askOpenQuestion = (question) => {
+        const askedQuestion = createChatBotMessage(question);
+        showMessageBar(true);
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, askedQuestion],
         }));
     }
 
@@ -117,7 +141,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                         handleStartConversation,
                         handleClickedContinue,
                         handleYesNoAnswer,
-                        askQuestion,
+                        handleAgeAnswer,
+                        askOpenQuestion,
+                        askPoleQuestion,
                         endConversation,
                         setLanguage,
                         textData

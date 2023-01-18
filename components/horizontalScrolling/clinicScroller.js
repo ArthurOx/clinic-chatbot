@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Button from '../button';
+import { Button } from 'react-bootstrap';
 import Example from './examples';
 
 
@@ -45,7 +45,7 @@ export default function ClinicScroller({ children, actions, textData }) {
                 </div>
             </Swiper >
             <Example>{selected}</Example>
-            <Button className="continue-button" handleClick={handleClick} isDisabled={button}>Continue</Button>
+            <Button className="continue-button" onClick={actions.handleClickedContinue} isDisabled={button}>Continue</Button>
         </>
     );
 

@@ -3,6 +3,7 @@ import Intro from '../components/intro/intro.js';
 import ClinicScroller from '../components/horizontalScrolling/clinicScroller.js';
 import YesNoQuestion from '../components/messages/yesNoQuestion.js';
 import FrontWindow from '../components/frontWindow.js';
+import AgeQuestion from '../components/messages/ageQuestion.js';
 
 const config = {
     initialMessages: [createCustomMessage('pickLanguage', 'frontWindow')],
@@ -16,7 +17,8 @@ const config = {
         frontWindow: (props) => <FrontWindow {...props} />,
         intro: (props) => <Intro {...props} textData={props.actions.textData} />,
         scroller: (props) => <ClinicScroller {...props} textData={props.actions.textData}></ClinicScroller>,
-        yesNoQuestion: (props) => <YesNoQuestion {...props} textData={props.actions.textData} />
+        yesNoQuestion: (props) => <YesNoQuestion {...props} textData={props.actions.textData} />,
+        ageQuestion: (props) => <AgeQuestion {...props} textData={props.actions.textData} />
     },
     customComponents: {
         botAvatar: () => null,

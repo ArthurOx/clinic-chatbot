@@ -7,15 +7,16 @@ const MessageParser = ({ children, actions }) => {
     //todo
     const parse = (message) => {
         if (messageNumber == 0) {
-            actions.askQuestion('Phone number?');
+            actions.askOpenQuestion('Phone number?');
             setMessageNumber(1);
         }
         else if (messageNumber == 1) {
-            actions.askQuestion('Age?');
+            actions.askOpenQuestion('Age?');
+            // actions.askPoleQuestion('Age');
             setMessageNumber(2);
         }
         else if (messageNumber == 2) {
-            actions.askQuestion('What can we help you with?');
+            actions.askOpenQuestion('What can we help you with?');
             setMessageNumber(3);
         }
         else if (messageNumber == 3) {
