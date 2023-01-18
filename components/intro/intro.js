@@ -17,13 +17,14 @@ export default function Intro({ actions, textData }) {
                 <div className='intro-item-content'>
                     <p className='intro-content'>{textData.intro.introText}</p>
                 </div>
+                <Image className='custom-scroll-logo-image'
+                    alt='scroll-logo'
+                    src={ScrollLogo}
+                    width={105.91}
+                    height={108.98}>
+                </Image>
             </div>
-            <Image className='custom-scroll-logo-image'
-                alt='scroll-logo'
-                src={ScrollLogo}
-                width={105.91}
-                height={108.98}>
-            </Image>
+
             <Button className='custom-btn custom-intro-btn' onClick={(e) => actions.handleStartConversation(e)}>{textData.intro.introButton}</Button>
         </div>
     )

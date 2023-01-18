@@ -28,10 +28,10 @@ export default function ClinicScroller({ children, actions, textData }) {
                 <div>
                     {textData.clinicCards.map((item) => {
                         return <SwiperSlide
-                            className={(item.clinic.id != slide) ? "card card-reg" : "card card-selected"}
+                            className={(item.clinic.id != slide) ? "card clickable-default clickable-som" : "card clickable-selected"}
                             key={item.clinic.id}
                             onClick={() => setSlide(item.clinic.id)}>
-                            <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg" : "text-in-card text-in-card-selected"}>
+                            <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg clickable-som" : "text-in-card text-in-card-selected"}>
                                 {item.clinic.description}
                             </div>
                         </SwiperSlide>
