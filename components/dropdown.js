@@ -12,7 +12,7 @@ export default function DropDown({ children, handleSubmit }) {
     return (
         // <select id="dropDownSelector" onChange={handleSubmit}></select>
         <Dropdown>
-            <Dropdown.Toggle className='custom_btn custom-lang-btn'>
+            <Dropdown.Toggle className='custom-btn custom-lang-btn'>
                 <Image className='custom-lang-btn-image'
                     alt='translations-logo'
                     src={TransLogo}

@@ -28,10 +28,10 @@ export default function ClinicScroller({ children, actions, textData }) {
                 <div>
                     {textData.clinicCards.map((item) => {
                         return <SwiperSlide
-                            className={(item.clinic.id != slide) ? "card" : "card-selected"}
+                            className={(item.clinic.id != slide) ? "card card-reg" : "card card-selected"}
                             key={item.clinic.id}
                             onClick={() => setSlide(item.clinic.id)}>
-                            <div className={(item.clinic.id != slide) ? "text-in-card" : "text-in-card-selected"}>
+                            <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg" : "text-in-card text-in-card-selected"}>
                                 {item.clinic.description}
                             </div>
                         </SwiperSlide>
@@ -39,7 +39,7 @@ export default function ClinicScroller({ children, actions, textData }) {
                 </div>
             </Swiper >
             <Example>{selected}</Example>
-            <Button className="custom_btn custome-continue_btn" onClick={(e) => actions.handleClickedContinue(e)} >{textData.continueText}</Button>
+            <Button className="custom-btn custome-continue_btn" onClick={(e) => actions.handleClickedContinue(e)} >{textData.continueText}</Button>
         </>
     );
 

@@ -24,7 +24,7 @@ export default function Intro({ actions, textData }) {
                 width={105.91}
                 height={108.98}>
             </Image>
-            <Button className='custom_btn custom-get-started-btn' onClick={(e) => actions.handleStartConversation(e)}>{textData.intro.introButton}</Button>
+            <Button className='custom-btn custom-intro-btn' onClick={(e) => actions.handleStartConversation(e)}>{textData.intro.introButton}</Button>
         </div>
     )
 }
