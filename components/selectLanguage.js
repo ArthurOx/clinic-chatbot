@@ -26,7 +26,6 @@ export default function SelectLanguage(props) {
     const handleChange = (chosenLanguage) => {
         setVisibility(false);
         console.log("chosen lang is: " + chosenLanguage);
-        let asdf = chosenLanguage;
         props.actions.handleLanguagePicked(chosenLanguage);
     };
 

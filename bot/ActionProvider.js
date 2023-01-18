@@ -1,16 +1,24 @@
 import { createCustomMessage, createClientMessage } from 'react-chatbot-kit';
 import React, { useState, useEffect } from 'react';
 import { animateScroll as scroll } from 'react-scroll'
-import { getData } from "../supabase/supabaseApi";
+import { supabase } from "../supabase/supabaseApi";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [messageBar, showMessageBar] = useState(false);
     const [language, setLanguage] = useState('');
     const [textData, setTextData] = useState({});
 
-    const handleLanguagePicked = (chosenLanguage) => {
+    const getData = async (language) => {
+        let { data, error } = await supabase
+            .from('translations')
+            .select('content')
+            .eq('language', language)
+        return data
+    };
+
+    const handleLanguagePicked = async (chosenLanguage) => {
         setLanguage(chosenLanguage);
-        // const data = getData(chosenLanguage);
+        const data = await getData(chosenLanguage);
         const dataInLanguage = {
             clinicCards: [{
                 clinic: {
