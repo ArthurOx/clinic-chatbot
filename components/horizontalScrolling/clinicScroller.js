@@ -39,7 +39,7 @@ export default function ClinicScroller({ children, actions, textData }) {
                 </div>
             </Swiper >
             <Example>{selected}</Example>
-            <Button className="continue-button" onClick={(e) => actions.handleClickedContinue(e)} >{textData.continueText}</Button>
+            <Button className="custom_btn custome-continue_btn" onClick={(e) => actions.handleClickedContinue(e)} >{textData.continueText}</Button>
         </>
     );
 

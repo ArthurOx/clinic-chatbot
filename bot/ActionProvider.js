@@ -1,5 +1,6 @@
 import { createCustomMessage, createClientMessage } from 'react-chatbot-kit';
 import React, { useState, useEffect } from 'react';
+import { animateScroll as scroll } from 'react-scroll'
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [messageBar, showMessageBar] = useState(false);
@@ -58,6 +59,13 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     };
 
+    const scrollToBottom = () => {
+        scroll.scrollToBottom({
+            duration: 500,
+            smooth: 'easeInOutQuart'
+        });
+    }
+
     const handleStartConversation = (event) => {
         event.currentTarget.disabled = true;
         const botMessage = createCustomMessage('Test', 'scroller');
@@ -65,6 +73,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             ...prev,
             messages: [...prev.messages, botMessage],
         }));
+        scrollToBottom(); //smooth scrolling function that doesn't work right now :(
     };
 
     const handleClickedContinue = (event) => {
@@ -109,7 +118,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     }
 
-    const askPoleQuestion =(question) => { //like age
+    const askPoleQuestion = (question) => { //like age
         const askedQuestion = createChatBotMessage(question);
         // const poleQuestion = createCustomMessage(`handle${question}Answer`, `handle${question}Answer`);
         const poleQuestion = createCustomMessage('ageQuestion', 'ageQuestion');
