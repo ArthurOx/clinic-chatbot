@@ -49,7 +49,11 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                 question: "contactQuestion",
                 yes: "yes",
                 no: "no"
-            }
+            },
+            phoneQuestion: "Phone?",
+            ageQuestion: "Age?",
+            helpQuestion: "What can we help you with?",
+            endConversation: "endConversation"
         };
         setTextData(dataInLanguage);
         const introMessage = createCustomMessage('Intro', 'intro');
@@ -140,7 +144,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
     const endConversation = () => {
         showMessageBar(false);
-        const endMessage = createChatBotMessage('Thank you for contacting us. We will get back to you shortly.');
+        const endMessage = createChatBotMessage(textData.endConversation);
         setState((prev) => ({
             ...prev,
             messages: [...prev.messages, endMessage],
