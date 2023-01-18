@@ -1,6 +1,7 @@
 import { createCustomMessage, createClientMessage } from 'react-chatbot-kit';
 import React, { useState, useEffect } from 'react';
 import { animateScroll as scroll } from 'react-scroll'
+import { getData } from "../supabase/supabaseApi";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [messageBar, showMessageBar] = useState(false);
@@ -9,6 +10,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
     const handleLanguagePicked = (chosenLanguage) => {
         setLanguage(chosenLanguage);
+        // const data = getData(chosenLanguage);
         const dataInLanguage = {
             clinicCards: [{
                 clinic: {
