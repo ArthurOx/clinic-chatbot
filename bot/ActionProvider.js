@@ -8,34 +8,48 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
     const handleLanguagePicked = (chosenLanguage) => {
         setLanguage(chosenLanguage);
-        const dataInLanguage = [{
-            clinic: {
-                id: 0,
-                description: "description1",
-                examples: ["example1", "example2", "example3"]
+        const dataInLanguage = {
+            clinicCards: [{
+                clinic: {
+                    id: 0,
+                    description: "description1",
+                    examples: ["example1", "example2", "example3"]
+                }
+            },
+            {
+                clinic: {
+                    id: 1,
+                    description: "description2",
+                    examples: ["example3", "example4", "example5"]
+                }
+            },
+            {
+                clinic: {
+                    id: 2,
+                    description: "description3",
+                    examples: ["example6", "example7", "example8"]
+                }
+            },
+            {
+                clinic: {
+                    id: 3,
+                    description: "description4",
+                    examples: ["example3", "example3", "example5"]
+                }
+            }],
+            intro: {
+                introTitle: "introTitle",
+                introText: "introText",
+                introButton: "introButton"
+            },
+            exampleText: "exampleText",
+            continueText: "continueText",
+            contactQuestion: {
+                question: "contactQuestion",
+                yes: "yes",
+                no: "no"
             }
-        },
-        {
-            clinic: {
-                id: 1,
-                description: "description2",
-                examples: ["example3", "example4", "example5"]
-            }
-        },
-        {
-            clinic: {
-                id: 2,
-                description: "description3",
-                examples: ["example6", "example7", "example8"]
-            }
-        },
-        {
-            clinic: {
-                id: 3,
-                description: "description4",
-                examples: ["example3", "example3", "example5"]
-            }
-        }];
+        };
         setTextData(dataInLanguage);
         const introMessage = createCustomMessage('Intro', 'intro');
         setState((prev) => ({
@@ -55,7 +69,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
     const handleClickedContinue = (event) => {
         event.currentTarget.disabled = true;
-        const botMessage = createChatBotMessage('would you like to contact a lawyer?');
+        const botMessage = createChatBotMessage(textData.contactQuestion.question);
         const yesNoQuestion = createCustomMessage('yesNoQuestion', 'yesNoQuestion');
         setState((prev) => ({
             ...prev,

@@ -11,10 +11,8 @@ export default function YesNoQuestion({ children, actions, textData }) {
     // todo replace yes no with translation
     return (
         <div className='yes-no-buttons'>
-            {/* <Button className="yes-no-button" onClick={() => handleClick("Yes")} hidden={visibility}>Yes</Button>
-            <Button className="yes-no-button" onClick={() => handleClick("No")} hidden={visibility}>No</Button> */}
-            <Button className="yes-no-button" onClick={() => handleClick("Yes")} hidden={visibility}>Yes</Button>
-            <Button className="yes-no-button" onClick={() => handleClick("No")} hidden={visibility}>No</Button>
+            <Button className="yes-no-button" onClick={() => handleClick("Yes")} hidden={visibility}>{textData.contactQuestion.yes}</Button>
+            <Button className="yes-no-button" onClick={() => handleClick("No")} hidden={visibility}>{textData.contactQuestion.no}</Button>
         </div>
     )
 }
