@@ -1,15 +1,18 @@
 import { createCustomMessage, createClientMessage } from 'react-chatbot-kit';
 import React, { useState, useEffect } from 'react';
 import { animateScroll as scroll } from 'react-scroll'
-import { supabase } from "../supabase/supabaseApi";
+import { createClient } from '@supabase/supabase-js'
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [messageBar, showMessageBar] = useState(false);
     const [language, setLanguage] = useState('');
     const [textData, setTextData] = useState({});
 
+
+    const client = createClient("https://hytwotrwicehsgalrxgp.supabase.co", process.env.SUPABASE_URL);
+
     const getData = async (language) => {
-        let { data, error } = await supabase
+        let { data, error } = await client
             .from('translations')
             .select('content')
             .eq('language', language)
