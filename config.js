@@ -1,5 +1,4 @@
-export const SUPABASE_URL = "https://hytwotrwicehsgalrxgp.supabase.co";
-// export const SUPABASE_SERVICE_KEY = process.env.SUPABASE_KEY
-export const SUPABASE_SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5dHdvdHJ3aWNlaHNnYWxyeGdwIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3MjczNjgzMywiZXhwIjoxOTg4MzEyODMzfQ.by2MOISHgIGaUZyFwqBFo-UyxpYpDcBQpyv7d1jiDKo";
+export const SUPABASE_URL = process.env.SUPABASE_URL;
+export const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY
 
 
