@@ -38,12 +38,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
     const handleStartConversation = (event) => {
         event.currentTarget.disabled = true;
-        const botMessage = createCustomMessage('Test', 'scroller');
+        const botMessage = createCustomMessage('ClinicScroller', 'scroller');
         setState((prev) => ({
             ...prev,
             messages: [...prev.messages, botMessage],
         }));
-        scrollToBottom(); //smooth scrolling function that doesn't work right now :(
+        // scrollToBottom(); //smooth scrolling function that doesn't work right now :(
     };
 
     const handleClickedContinue = (event) => {
