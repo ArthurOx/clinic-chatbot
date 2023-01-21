@@ -311,6 +311,69 @@ body {
     color: #303AAA;
 }
 
+
+.accordion-button {
+    margin: auto;
+    color: #303AAA;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    margin-bottom: -20px;
+    font-size: 25px;
+    align-items: center;
+    background-color: transparent;
+}
+
+.accordion-button:not(.collapsed) {}
+
+.accordion-item {
+    width: 301px;
+    margin: auto;
+    background-color: transparent;
+    --bs-accordion-bg: transparent;
+    --bs-accordion-active-bg: transparent;
+    --bs-accordion-active-color: #303AAA;
+    --bs-accordion-btn-active-icon: none;
+    --bs-accordion-inner-border-radius: 15px;
+    --bs-accordion-btn-focus-border-color: #303AAA;
+    --bs-accordion-btn-icon: none;
+    --bs-accordion-border-color: #303AAA;
+    --bs-accordion-btn-focus-box-shadow: none;
+    border: 2px solid #303AAA;
+    border-radius: 15px;
+    border-right: 7px double #303AAA;
+    border-bottom: 7px double #303AAA;
+    border-top: 2px solid #303AAA !important;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    margin-top: 15px;
+    direction: rtl;
+}
+
+
+.accordion-header {
+    background-color: transparent;
+    margin: auto;
+    height: 60px;
+
+}
+
+.accordion-body {
+    background-color: transparent;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 90%;
+    text-align: right;
+    color: #303AAA;
+}
+
 .clickable-som:hover {
     background-color: #f5f3f1 !important;
     border: 2px solid #303AAA !important;
@@ -381,7 +444,34 @@ body {
     scrollbar-width: none;
     /* Firefox */
     margin-bottom: -20px;
+}
 
+.separator {
+    opacity: none;
+    border-top: 2px solid #B8E5FF;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.example-text {
+    margin-top: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 93.6%;
+    text-align: center;
+    color: #303AAA;
+}
+
+.card-header-text {
+    margin-bottom: 25px;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 93.6%;
+    text-align: center;
+    color: #303AAA;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -439,4 +529,5 @@ body {
 
 .custome-continue_btn {
     margin-top: 28.65px;
+    margin-bottom: 28.65px;
 }

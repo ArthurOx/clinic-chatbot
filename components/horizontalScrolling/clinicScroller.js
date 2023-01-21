@@ -17,6 +17,8 @@ export default function ClinicScroller({ children, actions, textData }) {
 
     return (
         <>
+            <hr className='separator' />
+            <div className='card-header-text'>{textData.cardHeaderText}</div>
             <Swiper
                 dir="rtl"
                 slidesPerView={'auto'}
@@ -38,8 +40,10 @@ export default function ClinicScroller({ children, actions, textData }) {
                     })}
                 </div>
             </Swiper >
-            <Example>{selected}</Example>
+            <Example exampleText={textData.exampleText}>{selected}</Example>
             <Button className="custom-btn custome-continue_btn" onClick={(e) => actions.handleClickedContinue(e)} >{textData.continueText}</Button>
+            <hr className='separator' />
+
         </>
     );
 
