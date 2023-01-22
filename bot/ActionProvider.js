@@ -65,8 +65,18 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
         if (answer === "Yes") {
             askName();
+        } else {
+            answeredNo();
         }
     };
+
+    const answeredNo = () => {
+        const botMessage = createChatBotMessage(textData.contactQuestion.noAnswer);
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, botMessage],
+        }));
+    }
 
     const handleAgeAnswer = (answer) => {
         console.log("age answer: " + answer);
