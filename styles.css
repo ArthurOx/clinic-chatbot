@@ -37,7 +37,7 @@ body {
 }
 
 .react-chatbot-kit-chat-input-container {
-    position: relative;
+    position: sticky;
     z-index: 10;
 }
 
@@ -447,7 +447,7 @@ body {
 }
 
 .separator {
-    opacity: none;
+    opacity: 1;
     border-top: 2px solid #B8E5FF;
     width: 90%;
     margin: auto;
@@ -530,4 +530,8 @@ body {
 .custome-continue_btn {
     margin-top: 28.65px;
     margin-bottom: 28.65px;
+}
+
+.dropdown-divider {
+    border-top: 2px solid #303AAA;
 }

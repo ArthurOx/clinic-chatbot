@@ -118,10 +118,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     useEffect(() => {
+        const messageBarElement = document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0];
         if (messageBar) {
-            document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0].style.display = 'flex';
+            messageBarElement.style.display = 'flex';
+            document.getElementById('bottom-of-chat').scrollIntoView({ behavior: 'smooth' });
         } else {
-            document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0].style.display = 'none';
+            messageBarElement.style.display = 'none';
         }
     }, [messageBar]);
 

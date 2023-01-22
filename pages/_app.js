@@ -13,7 +13,10 @@ import "../styles.css";
 export default function App({ Component, pageProps }) {
     return (
         <div>
-            <ChatbotPage {...pageProps} />
+            <div>
+                <ChatbotPage {...pageProps} />
+            </div>
+            <div id="bottom-of-chat"></div>
         </div>
     )
 }
