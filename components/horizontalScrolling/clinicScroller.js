@@ -6,10 +6,11 @@ import Example from './examples';
 
 
 
-export default function ClinicScroller({ children, actions, textData }) {
+export default function ClinicScroller({ actions, textData }) {
     const [selected, setSelected] = useState(textData.clinicCards[0].clinic.examples);
     const [slide, setSlide] = useState(-1);
-
+    const textDirection = actions.direction;
+    const textAlign = actions.textAlign;
     const slideChanged = (slide) => {
         let index = slide.activeIndex;
         setSelected(textData.clinicCards[index].clinic.examples);
@@ -20,14 +21,14 @@ export default function ClinicScroller({ children, actions, textData }) {
             <hr className='separator' />
             <div className='card-header-text'>{textData.cardHeaderText}</div>
             <Swiper
-                dir="rtl"
+                dir={textDirection}
                 slidesPerView={'auto'}
                 centeredSlides={true}
                 onSlideChange={(slide) => slideChanged(slide)}
                 onSwiper={(swiper) => console.log(swiper)}
                 slideToClickedSlide={true}
             >
-                <div>
+                <div style={{ direction: { textDirection } }}>
                     {textData.clinicCards.map((item) => {
                         return <SwiperSlide
                             className={(item.clinic.id != slide) ? "card clickable-default clickable-som" : "card clickable-selected"}

@@ -355,7 +355,7 @@ body {
     border-bottom-left-radius: 15px !important;
     border-bottom-right-radius: 15px !important;
     margin-top: 15px;
-    direction: rtl;
+    /* direction: rtl; */
 }
 
 

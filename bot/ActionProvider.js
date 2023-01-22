@@ -22,6 +22,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         setLanguage(chosenLanguage);
         const data = await getData(chosenLanguage);
         const dataInLanguage = data.content;
+        setDirection(dataInLanguage.languageDir);
+        if (dataInLanguage.languageDir === 'rtl') {
+            setTextAlign('right');
+        } else {
+            setTextAlign('left');
+        }
         setTextData(dataInLanguage);
         const introMessage = createCustomMessage('Intro', 'intro');
         setState((prev) => ({
@@ -145,7 +151,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                         askPoleQuestion,
                         endConversation,
                         setLanguage,
-                        textData
+                        textData,
+                        direction,
+                        textAlign
                     }
                 });
             })}
