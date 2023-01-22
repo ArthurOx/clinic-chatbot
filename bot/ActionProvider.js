@@ -1,11 +1,12 @@
 import { createCustomMessage, createClientMessage } from 'react-chatbot-kit';
 import React, { useState, useEffect } from 'react';
-import { animateScroll as scroll } from 'react-scroll';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [messageBar, showMessageBar] = useState(false);
     const [language, setLanguage] = useState('');
     const [textData, setTextData] = useState({});
+    const [direction, setDirection] = useState('ltr');
+    const [textAlign, setTextAlign] = useState('left');
 
     const getData = async (language) => {
         const response = await fetch(`/api/table?language=${language}`, {
@@ -28,13 +29,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             messages: [introMessage],
         }));
     };
-
-    const scrollToBottom = () => {
-        scroll.scrollToBottom({
-            duration: 500,
-            smooth: 'easeInOutQuart'
-        });
-    }
 
     const handleStartConversation = (event) => {
         event.currentTarget.disabled = true;

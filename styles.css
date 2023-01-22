@@ -328,7 +328,9 @@ body {
     background-color: transparent;
 }
 
-.accordion-button:not(.collapsed) {}
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+}
 
 .accordion-item {
     width: 301px;
