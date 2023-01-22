@@ -1,7 +1,7 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 
-export default function Example({ children, exampleText }) {
+export default function Example({ children, exampleText, slideStyle }) {
     return (
         <div>
             <div className='example-text'>{exampleText}</div>
@@ -9,8 +9,8 @@ export default function Example({ children, exampleText }) {
                 {children.map((child, index) => {
                     return (
                         <Accordion.Item eventKey={index} class='clickable-som text-in-example'>
-                            <Accordion.Header>{child.header}</Accordion.Header>
-                            <Accordion.Body>
+                            <Accordion.Header style={slideStyle()}>{child.header}</Accordion.Header>
+                            <Accordion.Body style={slideStyle()}>
                                 {child.description}
                             </Accordion.Body>
                         </Accordion.Item>

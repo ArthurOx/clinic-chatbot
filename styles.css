@@ -372,7 +372,6 @@ body {
     font-style: normal;
     font-size: 18px;
     line-height: 90%;
-    text-align: right;
     color: #303AAA;
 }
 
@@ -407,12 +406,11 @@ body {
     height: 282px;
     border-radius: 20px;
     box-sizing: border-box;
-    left: 55px;
     margin-left: 11px;
     word-wrap: break-word;
     padding-top: 20px;
     overflow-y: scroll;
-
+    padding: 20px;
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;
     /* IE and Edge */
@@ -430,7 +428,14 @@ body {
     font-style: normal;
     font-size: 25px;
     line-height: 93.6%;
-    text-align: right;
+}
+
+.desc-in-card {
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 93.6%;
+    margin-top: 15px;
 }
 
 .example {
