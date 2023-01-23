@@ -1,7 +1,6 @@
 import React, { Children, useState } from 'react';
 import DropDown from './dropdown.js';
-import rawLanguages from './no_missing_langs.json'
-// import rawLanguages from './data.json'
+import rawLanguages from './data.json'
 const primaryLanguageCodes = ["he", "am", "ru", "en", "ar"];
 
 function loadLanguageList(primary) {

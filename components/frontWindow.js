@@ -2,7 +2,7 @@ import React, { Children, useState } from 'react';
 import Image from 'next/image';
 import SelectLanguage from './selectLanguage';
 import LogoImage from '../resources/logo.svg';
-import LogoTitle from '../resources/logo_title.svg';
+import LogoTitle from '../resources/languages.gif';
 
 
 export default function FrontWindow(props) {
