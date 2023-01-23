@@ -1,25 +1,33 @@
 import { createCustomMessage, createClientMessage } from 'react-chatbot-kit';
 import React, { useState, useEffect } from 'react';
-import { animateScroll as scroll } from 'react-scroll'
-import { supabase } from "../supabase/supabaseApi";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [messageBar, showMessageBar] = useState(false);
     const [language, setLanguage] = useState('');
     const [textData, setTextData] = useState({});
+    const [direction, setDirection] = useState('ltr');
+    const [textAlign, setTextAlign] = useState('left');
 
     const getData = async (language) => {
-        let { data, error } = await supabase
-            .from('translations')
-            .select('content')
-            .eq('language', language)
-        return data
+        const response = await fetch(`/api/table?language=${language}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((response) => response.json());
+        return response.message[0];
     };
 
     const handleLanguagePicked = async (chosenLanguage) => {
         setLanguage(chosenLanguage);
         const data = await getData(chosenLanguage);
-        const dataInLanguage = data[0].content;
+        const dataInLanguage = data.content;
+        setDirection(dataInLanguage.languageDir);
+        if (dataInLanguage.languageDir === 'rtl') {
+            setTextAlign('right');
+        } else {
+            setTextAlign('left');
+        }
         setTextData(dataInLanguage);
         const introMessage = createCustomMessage('Intro', 'intro');
         setState((prev) => ({
@@ -28,21 +36,14 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     };
 
-    const scrollToBottom = () => {
-        scroll.scrollToBottom({
-            duration: 500,
-            smooth: 'easeInOutQuart'
-        });
-    }
-
     const handleStartConversation = (event) => {
         event.currentTarget.disabled = true;
-        const botMessage = createCustomMessage('Test', 'scroller');
+        const botMessage = createCustomMessage('ClinicScroller', 'scroller');
         setState((prev) => ({
             ...prev,
             messages: [...prev.messages, botMessage],
         }));
-        scrollToBottom(); //smooth scrolling function that doesn't work right now :(
+        // scrollToBottom(); //smooth scrolling function that doesn't work right now :(
     };
 
     const handleClickedContinue = (event) => {
@@ -64,8 +65,18 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
         if (answer === "Yes") {
             askName();
+        } else {
+            answeredNo();
         }
     };
+
+    const answeredNo = () => {
+        const botMessage = createChatBotMessage(textData.contactQuestion.noAnswer);
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, botMessage],
+        }));
+    }
 
     const handleAgeAnswer = (answer) => {
         console.log("age answer: " + answer);
@@ -117,10 +128,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     useEffect(() => {
+        const messageBarElement = document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0];
         if (messageBar) {
-            document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0].style.display = 'flex';
+            messageBarElement.style.display = 'flex';
+            document.getElementById('bottom-of-chat').scrollIntoView({ behavior: 'smooth' });
         } else {
-            document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0].style.display = 'none';
+            messageBarElement.style.display = 'none';
         }
     }, [messageBar]);
 
@@ -138,7 +151,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                         askPoleQuestion,
                         endConversation,
                         setLanguage,
-                        textData
+                        textData,
+                        direction,
+                        textAlign
                     }
                 });
             })}
