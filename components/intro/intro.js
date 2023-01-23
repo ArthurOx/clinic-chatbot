@@ -6,15 +6,29 @@ import ScrollLogo from '../../resources/scroll.svg';
 
 // Usually when waiting for some data to load
 export default function Intro({ actions, textData }) {
-
-
+    const textDirection = actions.direction;
+    const introStyle = () => {
+        if (textDirection == 'rtl') {
+            return {
+                'margin-right': '35px',
+                'textAlign': 'right',
+                'direction': 'rtl'
+            }
+        } else {
+            return {
+                'margin-left': '35px',
+                'textAlign': 'left',
+                'direction': 'ltr'
+            }
+        }
+    }
     return (
         <div className='intro-page'>
             <div className='intro-item'>
                 <div className='intro-item-title'>
-                    <h1 className='intro-title'>{textData.intro.introTitle}</h1>
+                    <h1 className='intro-title' style={introStyle()}>{textData.intro.introTitle}</h1>
                 </div>
-                <div className='intro-item-content'>
+                <div className='intro-item-content' style={introStyle()}>
                     <p className='intro-content'>{textData.intro.introText}</p>
                 </div>
                 <Image className='custom-scroll-logo-image'

@@ -23,7 +23,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         const data = await getData(chosenLanguage);
         const dataInLanguage = data.content;
         setDirection(dataInLanguage.languageDir);
-        if (dataInLanguage.languageDir === 'rtl') {
+        if (direction === 'rtl') {
             setTextAlign('right');
         } else {
             setTextAlign('left');
