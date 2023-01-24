@@ -264,38 +264,32 @@ body {
 }
 
 .intro-item-title {
-    width: 282px;
-    height: 201px;
     /* border-style: dotted;
     border-color: #0bebd1; */
 }
 
 .intro-title {
-    text-align: right;
     font-size: 50px;
     color: #303AAA;
+    font-family: 'Noto Sans', sans-serif;
 
     /* border-style: dotted;
     border-color: #1e0beb; */
 }
 
-.intro-item-content {
-
-
-    /* border-style: dotted;
-    border-color: #eb1e0b; */
-}
+.intro-item-content {}
 
 .intro-content {
-    text-align: right;
-    font-size: large;
+    font-size: 25px;
+    font-family: 'Noto Sans', sans-serif;
+    color: #303AAA;
 
     /* border-style: dotted;
     border-color: #eb8e0b; */
 }
 
 .custom-scroll-logo-image {
-    margin-top: 50px;
+    margin-top: 170px;
     position: relative;
     margin-left: -180px;
 

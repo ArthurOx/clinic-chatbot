@@ -59,7 +59,7 @@ export default function ClinicScroller({ actions, textData }) {
                 </div>
             </Swiper >
             <Example exampleText={textData.exampleText} slideStyle={slideStyle}>{selected}</Example>
-            <Button className="custom-btn custome-continue_btn" onClick={(e) => actions.handleClickedContinue(e)} >{textData.continueText}</Button>
+            <Button className="custom-btn custome-continue_btn" onClick={(e) => actions.handleClickedContinue(e)} disabled={slide == -1}>{textData.continueText}</Button>
             <hr className='separator' />
 
         </>
