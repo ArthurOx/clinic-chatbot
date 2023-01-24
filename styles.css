@@ -121,7 +121,6 @@ body {
 
 .react-chatbot-kit-chat-bot-avatar-letter {}
 
-/** should be on left side */
 .react-chatbot-kit-chat-bot-message {
     font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     background: #B8E5FF;
@@ -135,6 +134,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    direction: inherit;
 }
 
 .react-chatbot-kit-chat-bot-message-arrow {
@@ -349,7 +349,6 @@ body {
     border-bottom-left-radius: 15px !important;
     border-bottom-right-radius: 15px !important;
     margin-top: 15px;
-    /* direction: rtl; */
 }
 
 
@@ -484,13 +483,6 @@ body {
     font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     font-style: normal;
     font-size: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    /** put box in the middle of the container */
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .continue-button {
@@ -506,13 +498,10 @@ body {
 
 /** put everything on the right */
 .yes-no-buttons {
-    display: block;
     width: 100%;
     margin-right: 30px;
     margin-bottom: 30px;
     text-align: right;
-
-
 }
 
 .yes-button {

@@ -24,7 +24,7 @@ export default function FrontWindow(props) {
                     </Image>
                 </div>
                 <div className='language-select'>
-                    <SelectLanguage {...props} />
+                    <SelectLanguage {...props} setDirection={props.actions.setDirection} />
                 </div>
             </header>
         </div>

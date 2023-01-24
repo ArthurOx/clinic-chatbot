@@ -10,13 +10,13 @@ export default function Intro({ actions, textData }) {
     const introStyle = () => {
         if (textDirection == 'rtl') {
             return {
-                'margin-right': '35px',
+                'marginRight': '35px',
                 'textAlign': 'right',
                 'direction': 'rtl'
             }
         } else {
             return {
-                'margin-left': '35px',
+                'marginLeft': '35px',
                 'textAlign': 'left',
                 'direction': 'ltr'
             }
