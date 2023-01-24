@@ -6,6 +6,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [language, setLanguage] = useState('');
     const [textData, setTextData] = useState({});
     const [direction, setDirection] = useState('ltr');
+    const [userOutput, setUserOutput] = useState('{}');
+
 
     const getData = async (language) => {
         const response = await fetch(`/api/table?language=${language}`, {
@@ -17,7 +19,18 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         return response.message[0];
     };
 
+    const sendData = async (userOutput) => {
+        await fetch(`/api/table`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ input: userOutput })
+        })
+    };
+
     const handleLanguagePicked = async (chosenLanguage) => {
+        setUserOutput({ language: chosenLanguage.code });
         setLanguage(chosenLanguage.code);
         const data = await getData(chosenLanguage.code);
         const dataInLanguage = data.content;
@@ -122,6 +135,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     const endConversation = () => {
+        sendData(userOutput);
         showMessageBar(false);
         const endMessage = createMessageRtlOrLtr(textData.endConversation);
         setState((prev) => ({
@@ -156,7 +170,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                         setLanguage,
                         setDirection,
                         textData,
-                        direction
+                        direction,
+                        userOutput
                     }
                 });
             })}
