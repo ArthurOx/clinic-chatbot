@@ -278,6 +278,7 @@ body {
     font-size: 50px;
     color: #303AAA;
     font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    word-break: break-word;
 
     /* border-style: dotted;
     border-color: #1e0beb; */
@@ -315,6 +316,12 @@ body {
     /* border-style: dotted;
     border-color: #fefeff; */
 }
+
+
+.swiper-slide {
+    height: auto !important;
+}
+
 
 .clickable-default {
     background-color: #f5f3f1;

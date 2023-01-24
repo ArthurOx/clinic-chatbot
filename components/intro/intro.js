@@ -12,25 +12,30 @@ export default function Intro({ actions, textData }) {
             return {
                 'marginRight': '35px',
                 'textAlign': 'right',
-                'direction': 'rtl'
+                'direction': 'rtl',
+                'width': 'fit-content'
             }
         } else {
             return {
                 'marginLeft': '35px',
                 'textAlign': 'left',
-                'direction': 'ltr'
+                'direction': 'ltr',
+                'width': 'fit-content'
             }
         }
     }
     return (
         <div className='intro-page'>
             <div className='intro-item'>
-                <div className='intro-item-title'>
-                    <h1 className='intro-title' style={introStyle()}>{textData.intro.introTitle}</h1>
+                <div className='intro-content'>
+                    <div className='intro-item-title'>
+                        <h1 className='intro-title' style={introStyle()}>{textData.intro.introTitle}</h1>
+                    </div>
+                    <div className='intro-item-content' style={introStyle()}>
+                        <p className='intro-content'>{textData.intro.introText}</p>
+                    </div>
                 </div>
-                <div className='intro-item-content' style={introStyle()}>
-                    <p className='intro-content'>{textData.intro.introText}</p>
-                </div>
+                
                 <Image className='custom-scroll-logo-image'
                     alt='scroll-logo'
                     src={ScrollLogo}

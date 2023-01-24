@@ -31,12 +31,16 @@ export default function ClinicScroller({ actions, textData }) {
             return {
                 'left': '55px',
                 'textAlign': 'right',
-                'direction': 'rtl'
+                'direction': 'rtl',
+                'height': 'fit-content',
+                'margin-bottom': '15px'
             }
         } else {
             return {
                 'right': '55px',
-                'textAlign': 'left'
+                'textAlign': 'left',
+                'height': 'fit-content',
+                'margin-bottom': '15px'
             }
         }
     }
