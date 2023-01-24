@@ -39,7 +39,10 @@ export default function Intro({ actions, textData }) {
                 </Image>
             </div>
 
-            <Button className='custom-btn custom-intro-btn' onClick={(e) => actions.handleStartConversation(e)}>{textData.intro.introButton}</Button>
+
+            <Button className='custom-btn custom-intro-btn'
+                onClick={(e) => actions.handleStartConversation(e)}
+                style={{ direction: textDirection }}>{textData.intro.introButton}</Button>
         </div>
     )
 }
