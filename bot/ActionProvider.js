@@ -56,8 +56,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     }
 
-    const handleYesNoAnswer = (answer) => {
-        const clientMessage = createClientMessage(answer);
+    const handleYesNoAnswer = (answer, localizedAnswer) => {
+        const clientMessage = createClientMessage(localizedAnswer);
         setState((prev) => ({
             ...prev,
             messages: [...prev.messages, clientMessage],
