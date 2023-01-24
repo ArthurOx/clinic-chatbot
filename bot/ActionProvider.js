@@ -25,7 +25,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
         // get classList of the input form and set direction
         if (direction === 'rtl') {
-            document.querySelectorAll('.react-chatbot-kit-chat-bot-message').forEach((a) => { a.style.direction = 'rtl' })
             document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0].style.direction = 'rtl';
         }
         const introMessage = createCustomMessage('Intro', 'intro');
@@ -48,7 +47,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         event.currentTarget.disabled = true;
         const botMessage = createChatBotMessage(textData.contactQuestion.question);
         const yesNoQuestion = createCustomMessage('yesNoQuestion', 'yesNoQuestion');
-        const botMessage2 = createCustomMessage('rtlQuestion', {
+        const botMessage2 = createCustomMessage('rtlQuestion', 'rtlQuestion', {
             payload: { text: 'asdfsdf123123' }
         });
         setState((prev) => ({

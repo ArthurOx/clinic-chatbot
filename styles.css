@@ -287,7 +287,6 @@ body {
 
 .intro-content {
     position: relative;
-    z-index: 11;
     font-size: 25px;
     font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     color: #303AAA;
