@@ -277,7 +277,7 @@ body {
 
 .custom-scroll-logo-image {
     position: absolute;
-    bottom: 130px;
+    bottom: -40px;
     right: 210px
         /* border-style: dotted;
     border-color: #0beb0b; */
