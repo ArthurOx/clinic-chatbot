@@ -286,6 +286,8 @@ body {
 .intro-item-content {}
 
 .intro-content {
+    position: relative;
+    z-index: 11;
     font-size: 25px;
     font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     color: #303AAA;
@@ -304,7 +306,7 @@ body {
 
 .custom-intro-btn {
     position: relative;
-    width: 186px;
+    width: auto;
     height: 40.35px;
     margin-bottom: 63px;
 
@@ -452,9 +454,7 @@ body {
     margin-top: 15px;
 }
 
-.custom-card-clinic-image {
-    
-}
+.custom-card-clinic-image {}
 
 .example {
     width: 301px;
