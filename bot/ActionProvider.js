@@ -90,7 +90,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     const askName = () => {
-        const nameQuestion = createChatBotMessage('What is your name?');
+        const nameQuestion = createChatBotMessage(textData.nameQuestion);
         showMessageBar(true);
         setState((prev) => ({
             ...prev,
