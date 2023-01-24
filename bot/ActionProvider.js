@@ -24,7 +24,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         setTextData(dataInLanguage);
 
         // get classList of the input form and set direction
-        if (direction === 'rtl') {
+        if (chosenLanguage.direction === 'rtl') {
             document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0].style.direction = 'rtl';
         }
         const introMessage = createCustomMessage('Intro', 'intro');
@@ -43,16 +43,19 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     };
 
+    const createMessageRtlOrLtr = (text) => {
+        return direction === 'rtl' ? createCustomMessage('rtlQuestion', 'rtlQuestion', {
+            payload: { text: text }
+        }) : createChatBotMessage(text);
+    }
+
     const handleClickedContinue = (event) => {
         event.currentTarget.disabled = true;
-        const botMessage = createChatBotMessage(textData.contactQuestion.question);
+        const botMessage = createMessageRtlOrLtr(textData.contactQuestion.question)
         const yesNoQuestion = createCustomMessage('yesNoQuestion', 'yesNoQuestion');
-        const botMessage2 = createCustomMessage('rtlQuestion', 'rtlQuestion', {
-            payload: { text: 'asdfsdf123123' }
-        });
         setState((prev) => ({
             ...prev,
-            messages: [...prev.messages, botMessage, yesNoQuestion, botMessage2],
+            messages: [...prev.messages, botMessage, yesNoQuestion],
         }));
     }
 
@@ -71,7 +74,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     };
 
     const answeredNo = () => {
-        const botMessage = createChatBotMessage(textData.contactQuestion.noAnswer);
+        const botMessage = createMessageRtlOrLtr(textData.contactQuestion.noAnswer);
         setState((prev) => ({
             ...prev,
             messages: [...prev.messages, botMessage],
@@ -90,7 +93,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     const askName = () => {
-        const nameQuestion = createChatBotMessage(textData.nameQuestion);
+        const nameQuestion = createMessageRtlOrLtr(textData.nameQuestion);
         showMessageBar(true);
         setState((prev) => ({
             ...prev,
@@ -99,7 +102,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     const askPoleQuestion = (question) => { //like age
-        const askedQuestion = createChatBotMessage(question);
+        const askedQuestion = createMessageRtlOrLtr(question);
         // const poleQuestion = createCustomMessage(`handle${question}Answer`, `handle${question}Answer`);
         const poleQuestion = createCustomMessage('ageQuestion', 'ageQuestion');
         showMessageBar(false);
@@ -110,7 +113,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     const askOpenQuestion = (question) => {
-        const askedQuestion = createChatBotMessage(question);
+        const askedQuestion = createMessageRtlOrLtr(question);
         showMessageBar(true);
         setState((prev) => ({
             ...prev,
@@ -120,7 +123,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
     const endConversation = () => {
         showMessageBar(false);
-        const endMessage = createChatBotMessage(textData.endConversation);
+        const endMessage = createMessageRtlOrLtr(textData.endConversation);
         setState((prev) => ({
             ...prev,
             messages: [...prev.messages, endMessage],
