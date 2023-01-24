@@ -17,7 +17,8 @@
     {
         "code": "ar",
         "name": "Arabic",
-        "native_name": "العربية"
+        "native_name": "العربية",
+        "direction": "rtl"
     },
     {
         "code": "hy",
@@ -172,7 +173,8 @@
     {
         "code": "ha",
         "name": "Hausa",
-        "native_name": "هَوُسَ"
+        "native_name": "هَوُسَ",
+        "direction": "rtl"
     },
     {
         "code": "haw",
@@ -258,7 +260,8 @@
     {
         "code": "ku",
         "name": "Kurdish",
-        "native_name": "Kurdî"
+        "native_name": "Kurdî",
+        "direction": "rtl"
     },
     {
         "code": "ky",
@@ -343,12 +346,14 @@
     {
         "code": "ps",
         "name": "Pashto",
-        "native_name": "پښتو"
+        "native_name": "پښتو",
+        "direction": "rtl"
     },
     {
         "code": "fa",
         "name": "Persian",
-        "native_name": "فارسی"
+        "native_name": "فارسی",
+        "direction": "rtl"
     },
     {
         "code": "pl",
@@ -398,7 +403,8 @@
     {
         "code": "sd",
         "name": "Sindhi",
-        "native_name": "سنڌي"
+        "native_name": "سنڌي",
+        "direction": "rtl"
     },
     {
         "code": "si",
@@ -483,12 +489,14 @@
     {
         "code": "ur",
         "name": "Urdu",
-        "native_name": "اردو"
+        "native_name": "اردو",
+        "direction": "rtl"
     },
     {
         "code": "ug",
         "name": "Uyghur",
-        "native_name": "ئۇيغۇرچە"
+        "native_name": "ئۇيغۇرچە",
+        "direction": "rtl"
     },
     {
         "code": "uz",
@@ -513,7 +521,8 @@
     {
         "code": "yi",
         "name": "Yiddish",
-        "native_name": "ייִדיש"
+        "native_name": "ייִדיש",
+        "direction": "rtl"
     },
     {
         "code": "yo",
