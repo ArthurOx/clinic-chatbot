@@ -263,7 +263,7 @@ body {
     padding: 10px;
     position: relative;
     width: 332px;
-    height: 380px;
+    height: auto;
 
     border-radius: 20px;
     border: 2px solid #303AAA;
