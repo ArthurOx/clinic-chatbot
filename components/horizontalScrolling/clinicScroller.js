@@ -31,14 +31,29 @@ export default function ClinicScroller({ actions, textData }) {
             return {
                 'left': '55px',
                 'textAlign': 'right',
-                'direction': 'rtl',
-                'height': 'fit-content',
-                'margin-bottom': '15px'
+                'direction': 'rtl'
             }
         } else {
             return {
                 'right': '55px',
-                'textAlign': 'left',
+                'textAlign': 'left'
+            }
+        }
+    }
+
+    const contentStyle = () => {
+        if (textDirection == 'rtl') {
+            return {
+                'text-align': 'center',
+                'margin-bottom': '15px',
+                'height': 'fit-content',
+                'margin-bottom': '15px',
+                'direction': 'rtl'
+            }
+        } else {
+            return {
+                'text-align': 'center',
+                'margin-bottom': '15px',
                 'height': 'fit-content',
                 'margin-bottom': '15px'
             }
@@ -75,8 +90,9 @@ export default function ClinicScroller({ actions, textData }) {
                                 alt='clinic-logo'
                                 // src={(CLINIC_IMAGES_PATH)+"C"+(item.clinic.id)+".svg"}
                                 src={imagesArr[item.clinic.id]}
-                                width={42.61}
-                                height={32.76}>
+                                // width={42.61}
+                                // height={32.76}
+                                >
                             </Image> : null
                             } 
                             
@@ -84,7 +100,7 @@ export default function ClinicScroller({ actions, textData }) {
                     })}
                 </div>
             </Swiper >
-            <Example exampleText={textData.exampleText} slideStyle={slideStyle}>{selected}</Example>
+            <Example exampleText={textData.exampleText} slideStyle={slideStyle} contentStyle={contentStyle}>{selected}</Example>
             <Button className="custom-btn custome-continue_btn" onClick={(e) => actions.handleClickedContinue(e)} disabled={slide == -1}>{textData.continueText}</Button>
             <hr className='separator' />
 
