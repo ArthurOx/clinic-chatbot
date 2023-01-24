@@ -87,7 +87,7 @@ body {
     font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     font-size: 22px;
     font-style: normal;
-    width: 320px;
+    width: 320px !important;
     color: #303AAA;
     border: 2px solid #303AAA;
     border-radius: 10px;
@@ -263,7 +263,7 @@ body {
     padding: 10px;
     position: relative;
     width: 332px;
-    height: 380px;
+    height: auto;
 
     border-radius: 20px;
     border: 2px solid #303AAA;
@@ -286,10 +286,11 @@ body {
 .intro-item-content {}
 
 .intro-content {
+    position: relative;
     font-size: 25px;
     font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     color: #303AAA;
-
+    margin-bottom: 50px;
     /* border-style: dotted;
     border-color: #eb8e0b; */
 }
@@ -304,7 +305,7 @@ body {
 
 .custom-intro-btn {
     position: relative;
-    width: 186px;
+    width: auto;
     height: 40.35px;
     margin-bottom: 63px;
 
@@ -452,9 +453,7 @@ body {
     margin-top: 15px;
 }
 
-.custom-card-clinic-image {
-    
-}
+.custom-card-clinic-image {}
 
 .example {
     width: 301px;
@@ -526,6 +525,7 @@ body {
     width: 100%;
     margin-right: 30px;
     margin-bottom: 30px;
+    margin-top: 25px;
     text-align: right;
 }
 

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function RtlMessage({ text }) {
+export default function RtlMessage(props) {
 
     return (
         <div className='react-chatbot-kit-chat-bot-message' style={{ direction: 'rtl' }}>
-            <span>asdfsdf</span>
+            <span>{props.payload.text}</span>
         </div>
     )
 }
