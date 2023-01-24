@@ -13,7 +13,7 @@ import image6 from '../../resources/clinic-images/C6.svg'
 import image7 from '../../resources/clinic-images/C7.svg'
 
 
-const imagesArr = [image0,image1,image2,image3,null,image5,image6,image7,null]
+const imagesArr = [image0, image1, image2, image3, null, image5, image6, image7, null]
 
 
 export default function ClinicScroller({ actions, textData }) {
@@ -60,6 +60,11 @@ export default function ClinicScroller({ actions, textData }) {
         }
     }
 
+    const clickedSlide = (id, clinicName) => {
+        setSlide(id);
+        actions.userOutput.chosenClinic = clinicName;
+    }
+
     return (
         <>
             <hr className='separator' />
@@ -77,7 +82,7 @@ export default function ClinicScroller({ actions, textData }) {
                         return <SwiperSlide
                             className={(item.clinic.id != slide) ? "card clickable-default clickable-som" : "card clickable-selected"}
                             key={item.clinic.id}
-                            onClick={() => setSlide(item.clinic.id)}
+                            onClick={() => clickedSlide(item.clinic.id, item.clinic.name)}
                             style={slideStyle()}>
                             <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg" : "text-in-card text-in-card-selected"}>
                                 {item.clinic.name}
