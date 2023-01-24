@@ -17,13 +17,16 @@ function loadLanguageList(primary) {
     return { primaryLanguages, secondaryLanguages: otherLanguages };
 }
 
-export default function SelectLanguage(props) {
+export default function SelectLanguage({ actions, setDirection }) {
     const [visibility, setVisibility] = useState(true);
 
     const handleChange = (chosenLanguage) => {
+        if (chosenLanguage.direction === 'rtl') {
+            setDirection('rtl');
+        }
         setVisibility(false);
         console.log("chosen lang is: " + chosenLanguage);
-        props.actions.handleLanguagePicked(chosenLanguage);
+        actions.handleLanguagePicked(chosenLanguage);
     };
 
     if (!visibility) {
@@ -34,7 +37,7 @@ export default function SelectLanguage(props) {
 
     return (
         <div>
-            <DropDown handleSubmit={handleChange}>{loadedLangs}</DropDown>
+            <DropDown handleSubmit={(lang) => handleChange(lang)}>{loadedLangs}</DropDown>
         </div>
     );
 };

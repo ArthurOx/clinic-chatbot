@@ -6,7 +6,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [language, setLanguage] = useState('');
     const [textData, setTextData] = useState({});
     const [direction, setDirection] = useState('ltr');
-    const [textAlign, setTextAlign] = useState('left');
 
     const getData = async (language) => {
         const response = await fetch(`/api/table?language=${language}`, {
@@ -19,16 +18,16 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     };
 
     const handleLanguagePicked = async (chosenLanguage) => {
-        setLanguage(chosenLanguage);
-        const data = await getData(chosenLanguage);
+        setLanguage(chosenLanguage.code);
+        const data = await getData(chosenLanguage.code);
         const dataInLanguage = data.content;
-        setDirection(dataInLanguage.languageDir);
-        if (direction === 'rtl') {
-            setTextAlign('right');
-        } else {
-            setTextAlign('left');
-        }
         setTextData(dataInLanguage);
+
+        // get classList of the input form and set direction
+        if (direction === 'rtl') {
+            document.querySelectorAll('.react-chatbot-kit-chat-bot-message').forEach((a) => { a.style.direction = 'rtl' })
+            document.getElementsByClassName('react-chatbot-kit-chat-input-form')[0].style.direction = 'rtl';
+        }
         const introMessage = createCustomMessage('Intro', 'intro');
         setState((prev) => ({
             ...prev,
@@ -43,21 +42,23 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             ...prev,
             messages: [...prev.messages, botMessage],
         }));
-        // scrollToBottom(); //smooth scrolling function that doesn't work right now :(
     };
 
     const handleClickedContinue = (event) => {
         event.currentTarget.disabled = true;
         const botMessage = createChatBotMessage(textData.contactQuestion.question);
         const yesNoQuestion = createCustomMessage('yesNoQuestion', 'yesNoQuestion');
+        const botMessage2 = createCustomMessage('rtlQuestion', {
+            payload: { text: 'asdfsdf123123' }
+        });
         setState((prev) => ({
             ...prev,
-            messages: [...prev.messages, botMessage, yesNoQuestion],
+            messages: [...prev.messages, botMessage, yesNoQuestion, botMessage2],
         }));
     }
 
-    const handleYesNoAnswer = (answer) => {
-        const clientMessage = createClientMessage(answer);
+    const handleYesNoAnswer = (answer, localizedAnswer) => {
+        const clientMessage = createClientMessage(localizedAnswer);
         setState((prev) => ({
             ...prev,
             messages: [...prev.messages, clientMessage],
@@ -90,7 +91,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     const askName = () => {
-        const nameQuestion = createChatBotMessage('What is your name?');
+        const nameQuestion = createChatBotMessage(textData.nameQuestion);
         showMessageBar(true);
         setState((prev) => ({
             ...prev,
@@ -151,9 +152,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                         askPoleQuestion,
                         endConversation,
                         setLanguage,
+                        setDirection,
                         textData,
-                        direction,
-                        textAlign
+                        direction
                     }
                 });
             })}

@@ -19,7 +19,8 @@ export default function ClinicScroller({ actions, textData }) {
         if (textDirection == 'rtl') {
             return {
                 'left': '55px',
-                'textAlign': 'right'
+                'textAlign': 'right',
+                'direction': 'rtl'
             }
         } else {
             return {

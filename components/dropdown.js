@@ -22,11 +22,11 @@ export default function DropDown({ children, handleSubmit }) {
             </Dropdown.Toggle>
             <Dropdown.Menu className='custom-ddm'>
                 {children.primaryLanguages.map(item => (
-                    <Dropdown.Item className='custom-ddm-item' eventKey={item} key={item.code} onClick={() => handleSubmit(item.code)}>{item.native_name}</Dropdown.Item>
+                    <Dropdown.Item className='custom-ddm-item' eventKey={item} key={item.code} onClick={() => handleSubmit(item)}>{item.native_name}</Dropdown.Item>
                 ))}
                 <Dropdown.Divider />
                 {children.secondaryLanguages.map(item => (
-                    <Dropdown.Item className='custom-ddm-item' eventKey={item} key={item.code} onClick={() => handleSubmit(item.code)}>{item.native_name}</Dropdown.Item>
+                    <Dropdown.Item className='custom-ddm-item' eventKey={item} key={item.code} onClick={() => handleSubmit(item)}>{item.native_name}</Dropdown.Item>
                 ))}
             </Dropdown.Menu>
         </Dropdown>

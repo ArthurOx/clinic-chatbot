@@ -10,13 +10,13 @@ export default function Intro({ actions, textData }) {
     const introStyle = () => {
         if (textDirection == 'rtl') {
             return {
-                'margin-right': '35px',
+                'marginRight': '35px',
                 'textAlign': 'right',
                 'direction': 'rtl'
             }
         } else {
             return {
-                'margin-left': '35px',
+                'marginLeft': '35px',
                 'textAlign': 'left',
                 'direction': 'ltr'
             }
@@ -39,7 +39,10 @@ export default function Intro({ actions, textData }) {
                 </Image>
             </div>
 
-            <Button className='custom-btn custom-intro-btn' onClick={(e) => actions.handleStartConversation(e)}>{textData.intro.introButton}</Button>
+
+            <Button className='custom-btn custom-intro-btn'
+                onClick={(e) => actions.handleStartConversation(e)}
+                style={{ direction: textDirection }}>{textData.intro.introButton}</Button>
         </div>
     )
 }

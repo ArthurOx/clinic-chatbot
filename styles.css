@@ -84,7 +84,7 @@ body {
 }
 
 .dropdown-menu {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     font-size: 22px;
     font-style: normal;
     width: 320px;
@@ -121,9 +121,8 @@ body {
 
 .react-chatbot-kit-chat-bot-avatar-letter {}
 
-/** should be on left side */
 .react-chatbot-kit-chat-bot-message {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     background: #B8E5FF;
     font-style: normal;
     font-size: 22px;
@@ -135,6 +134,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    direction: inherit;
 }
 
 .react-chatbot-kit-chat-bot-message-arrow {
@@ -142,7 +142,7 @@ body {
 }
 
 .react-chatbot-kit-user-chat-message {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     background: #303AAA;
     border-radius: 100px 70px 0px 100px;
     color: #F5F3F1;
@@ -200,7 +200,7 @@ body {
 }
 
 .custom-btn {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     background-color: #303AAA;
     border: #F5F3F1;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -271,7 +271,7 @@ body {
 .intro-title {
     font-size: 50px;
     color: #303AAA;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
 
     /* border-style: dotted;
     border-color: #1e0beb; */
@@ -281,7 +281,7 @@ body {
 
 .intro-content {
     font-size: 25px;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     color: #303AAA;
 
     /* border-style: dotted;
@@ -289,11 +289,10 @@ body {
 }
 
 .custom-scroll-logo-image {
-    margin-top: 170px;
-    position: relative;
-    margin-left: -180px;
-
-    /* border-style: dotted;
+    position: absolute;
+    bottom: -55px;
+    right: 210px
+        /* border-style: dotted;
     border-color: #0beb0b; */
 }
 
@@ -316,6 +315,7 @@ body {
     border-right: 7px double #303AAA;
     border-bottom: 7px double #303AAA;
     color: #303AAA;
+    line-height: 50%;
 }
 
 
@@ -362,7 +362,6 @@ body {
     border-bottom-left-radius: 15px !important;
     border-bottom-right-radius: 15px !important;
     margin-top: 15px;
-    /* direction: rtl; */
 }
 
 
@@ -375,7 +374,7 @@ body {
 
 .accordion-body {
     background-color: transparent;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     font-style: normal;
     font-size: 18px;
     line-height: 90%;
@@ -431,14 +430,14 @@ body {
 }
 
 .text-in-card {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     font-style: normal;
     font-size: 25px;
     line-height: 93.6%;
 }
 
 .desc-in-card {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     font-style: normal;
     font-size: 18px;
     line-height: 93.6%;
@@ -470,7 +469,7 @@ body {
 
 .example-text {
     margin-top: 20px;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     font-style: normal;
     font-size: 25px;
     line-height: 93.6%;
@@ -480,7 +479,7 @@ body {
 
 .card-header-text {
     margin-bottom: 25px;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     font-style: normal;
     font-size: 30px;
     line-height: 93.6%;
@@ -494,20 +493,13 @@ body {
 }
 
 .text-in-example {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     font-style: normal;
     font-size: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    /** put box in the middle of the container */
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .continue-button {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     width: 146px;
     height: 39px;
     margin-top: 15px;
@@ -519,13 +511,10 @@ body {
 
 /** put everything on the right */
 .yes-no-buttons {
-    display: block;
     width: 100%;
     margin-right: 30px;
     margin-bottom: 30px;
     text-align: right;
-
-
 }
 
 .yes-button {
