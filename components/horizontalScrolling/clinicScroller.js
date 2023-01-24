@@ -2,7 +2,18 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Button } from 'react-bootstrap';
 import Example from './examples';
+import Image from 'next/image';
+const CLINIC_IMAGES_PATH = '../../resources/clinic-images/'
+import image0 from '../../resources/clinic-images/C0.svg'
+import image1 from '../../resources/clinic-images/C1.svg'
+import image2 from '../../resources/clinic-images/C2.svg'
+import image3 from '../../resources/clinic-images/C3.svg'
+import image5 from '../../resources/clinic-images/C5.svg'
+import image6 from '../../resources/clinic-images/C6.svg'
+import image7 from '../../resources/clinic-images/C7.svg'
 
+
+const imagesArr = [image0,image1,image2,image3,null,image5,image6,image7,null]
 
 
 export default function ClinicScroller({ actions, textData }) {
@@ -55,6 +66,16 @@ export default function ClinicScroller({ actions, textData }) {
                             <div className={(item.clinic.id != slide) ? "desc-in-card text-in-card-reg" : "desc-in-card text-in-card-selected"}>
                                 {item.clinic.description}
                             </div>
+                            {
+                                imagesArr[item.clinic.id] ? <Image className='custom-card-clinic-image'
+                                alt='clinic-logo'
+                                // src={(CLINIC_IMAGES_PATH)+"C"+(item.clinic.id)+".svg"}
+                                src={imagesArr[item.clinic.id]}
+                                width={42.61}
+                                height={32.76}>
+                            </Image> : null
+                            } 
+                            
                         </SwiperSlide>
                     })}
                 </div>

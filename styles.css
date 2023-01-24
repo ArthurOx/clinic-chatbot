@@ -124,6 +124,8 @@ body {
 .react-chatbot-kit-chat-bot-message {
     font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     background: #B8E5FF;
+    width: auto;
+    max-width: 70%;
     font-style: normal;
     font-size: 22px;
     color: #303AAA;
@@ -135,6 +137,7 @@ body {
     justify-content: center;
     align-items: center;
     direction: inherit;
+    padding: 25px;
 }
 
 .react-chatbot-kit-chat-bot-message-arrow {
@@ -145,12 +148,15 @@ body {
     font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
     background: #303AAA;
     border-radius: 100px 70px 0px 100px;
+    width: auto;
+    max-width: 70%;
     color: #F5F3F1;
     font-style: normal;
     font-size: 22px;
     line-height: 29px;
     text-align: right;
     margin-right: 5px;
+    padding: 25px;
 }
 
 .dropdown-item {
@@ -316,6 +322,7 @@ body {
     border-bottom: 7px double #303AAA;
     color: #303AAA;
     line-height: 50%;
+    height: fit-content;
 }
 
 
@@ -409,7 +416,8 @@ body {
 
 .card {
     width: 214px;
-    height: 282px;
+    /* height: 282px; */
+    height: max-content;
     border-radius: 20px;
     box-sizing: border-box;
     margin-left: 11px;
@@ -442,6 +450,10 @@ body {
     font-size: 18px;
     line-height: 93.6%;
     margin-top: 15px;
+}
+
+.custom-card-clinic-image {
+    
 }
 
 .example {
