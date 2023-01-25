@@ -95,8 +95,8 @@ export default function ClinicScroller({ actions, textData }) {
                             onClick={() => clickedSlide(item.clinic.id, item.clinic.name)}
                             style={slideStyle()}>
                             <div className='slide-content-container'>
-                                <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg" : "text-in-card text-in-card-selected"}>
-                                    <span className='text-in-card-title'>{item.clinic.name}</span>
+                                <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg text-in-card-title" : "text-in-card text-in-card-selected"}>
+                                    <span>{item.clinic.name}</span>
                                 </div>
                                 <div className={(item.clinic.id != slide) ? "desc-in-card text-in-card-reg" : "desc-in-card text-in-card-selected"}>
                                     {item.clinic.description}

@@ -456,6 +456,11 @@ body {
     line-height: 93.6%;
 }
 
+.text-in-card-title {
+    background-color: #B8E5FF;
+    display: inline;
+}
+
 .desc-in-card {
     font-family: 'Noto Sans', AbrahamRegular, sans-serif;
     font-style: normal;
