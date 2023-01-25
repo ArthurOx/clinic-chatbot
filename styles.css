@@ -360,7 +360,7 @@ body {
 
 
 .accordion-button {
-    margin: auto auto -20px;
+    margin: auto;
     color: #303AAA;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -374,10 +374,16 @@ body {
     align-items: center;
     background-color: transparent;
     text-align: center !important;
+    width: auto !important;
+    display: block;
 }
 
 .accordion-button:not(.collapsed) {
     box-shadow: none;
+}
+
+.accordion-header {
+    display: block;
 }
 
 .accordion-item {

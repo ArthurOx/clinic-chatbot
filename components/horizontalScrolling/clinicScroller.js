@@ -47,7 +47,7 @@ export default function ClinicScroller({ actions, textData }) {
                 'text-align': 'center',
                 'height': 'fit-content',
                 'margin-bottom': '15px',
-                'direction': 'rtl'
+                'direction': 'rtl',
             }
         } else {
             return {
