@@ -116,7 +116,10 @@ body {
     overflow-y: scroll;
 }
 
-.react-chatbot-kit-chat-input::placeholder {}
+.react-chatbot-kit-chat-input::placeholder {
+    display: none !important; 
+    /* todo: make the text in the box invisable */
+}
 
 .react-chatbot-kit-chat-btn-send {
     background: #303AAA;
@@ -426,15 +429,15 @@ body {
  original bootstrap implemintation won't be affected 
  on hover */
 .clickable-default:hover {
-    color: #fff;
-    background-color: #00b3db;
-    border-color: #285e8e;
-    /*set the color you want here*/
+    background-color: #303AAA;
+    border-right: 7px double #f5f3f1;
+    border-bottom: 7px double #f5f3f1;
+    color: #F5F3F1;
 }
 
 .clickable-selected {
     background-color: #303AAA;
-    border: 2px solid #f5f3f1;
+    /* border: 2px solid #f5f3f1; */
     border-right: 7px double #f5f3f1;
     border-bottom: 7px double #f5f3f1;
     color: #F5F3F1;
@@ -478,7 +481,36 @@ body {
     margin-top: 15px;
 }
 
-.custom-card-clinic-image {}
+.custom-card-clinic-image {
+    width: 50%;
+    height: auto;
+    margin-top: 10px;
+    /* background-color: #F5F3F1; */
+}
+
+.highlight-container, .highlight {
+    position: relative;
+}
+  
+.highlight-container {
+display: inline-block;
+}
+
+.highlight-container:before {
+    content: " ";
+    display: block;
+    height: 90%;
+    width: 100%;
+    margin-left: -3px;
+    margin-right: -3px;
+    position: absolute;
+    background: #B8E5FF;
+    transform: rotate(2deg);
+    top: -1px;
+    left: -1px;
+    border-radius: 20% 25% 20% 24%;
+    padding: 10px 3px 3px 10px;
+}
 
 .example {
     width: 301px;
