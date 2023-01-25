@@ -565,6 +565,16 @@ body {
     border-radius: 30px;
 }
 
+.btn:disabled {
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
+    color: #303AAA;
+    opacity: 1;
+    background-color: transparent;
+    border: 2px solid #303AAA;
+    border-radius: 30px;
+    text-shadow: none;
+}
+
 /** put everything on the right */
 .yes-no-buttons {
     width: 100%;
