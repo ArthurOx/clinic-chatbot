@@ -45,7 +45,6 @@ export default function ClinicScroller({ actions, textData }) {
         if (textDirection == 'rtl') {
             return {
                 'text-align': 'center',
-                'margin-bottom': '15px',
                 'height': 'fit-content',
                 'margin-bottom': '15px',
                 'direction': 'rtl'
@@ -53,7 +52,6 @@ export default function ClinicScroller({ actions, textData }) {
         } else {
             return {
                 'text-align': 'center',
-                'margin-bottom': '15px',
                 'height': 'fit-content',
                 'margin-bottom': '15px'
             }
@@ -85,22 +83,22 @@ export default function ClinicScroller({ actions, textData }) {
                             onClick={() => clickedSlide(item.clinic.id, item.clinic.name)}
                             style={slideStyle()}>
                             <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg" : "text-in-card text-in-card-selected"}>
-                                {item.clinic.name}
+                                <span className='text-in-card-title'>{item.clinic.name}</span>
                             </div>
                             <div className={(item.clinic.id != slide) ? "desc-in-card text-in-card-reg" : "desc-in-card text-in-card-selected"}>
                                 {item.clinic.description}
                             </div>
                             {
                                 imagesArr[item.clinic.id] ? <Image className='custom-card-clinic-image'
-                                alt='clinic-logo'
-                                // src={(CLINIC_IMAGES_PATH)+"C"+(item.clinic.id)+".svg"}
-                                src={imagesArr[item.clinic.id]}
+                                    alt='clinic-logo'
+                                    // src={(CLINIC_IMAGES_PATH)+"C"+(item.clinic.id)+".svg"}
+                                    src={imagesArr[item.clinic.id]}
                                 // width={42.61}
                                 // height={32.76}
                                 >
-                            </Image> : null
-                            } 
-                            
+                                </Image> : null
+                            }
+
                         </SwiperSlide>
                     })}
                 </div>
