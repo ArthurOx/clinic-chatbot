@@ -93,6 +93,9 @@ body {
 .react-chatbot-kit-chat-input-form {
     display: none;
     background-color: #F5F3F1;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
+    font-size: 22px;
+
 }
 
 .dropdown-menu {
