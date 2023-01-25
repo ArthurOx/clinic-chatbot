@@ -10,14 +10,14 @@ export default function Intro({ actions, textData }) {
     const introStyle = () => {
         if (textDirection == 'rtl') {
             return {
-                'marginRight': '35px',
+                'marginRight': '15px',
                 'textAlign': 'right',
                 'direction': 'rtl',
                 'width': 'fit-content'
             }
         } else {
             return {
-                'marginLeft': '35px',
+                'marginLeft': '15px',
                 'textAlign': 'left',
                 'direction': 'ltr',
                 'width': 'fit-content'
@@ -35,7 +35,7 @@ export default function Intro({ actions, textData }) {
                         <p className='intro-content'>{textData.intro.introText}</p>
                     </div>
                 </div>
-                
+
                 <Image className='custom-scroll-logo-image'
                     alt='scroll-logo'
                     src={ScrollLogo}

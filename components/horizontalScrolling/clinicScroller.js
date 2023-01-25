@@ -44,15 +44,13 @@ export default function ClinicScroller({ actions, textData }) {
         if (textDirection == 'rtl') {
             return {
                 'text-align': 'center',
-                'margin-bottom': '15px',
                 'height': 'fit-content',
                 'margin-bottom': '15px',
-                'direction': 'rtl'
+                'direction': 'rtl',
             }
         } else {
             return {
                 'text-align': 'center',
-                'margin-bottom': '15px',
                 'height': 'fit-content',
                 'margin-bottom': '15px'
             }
@@ -85,12 +83,13 @@ export default function ClinicScroller({ actions, textData }) {
                             style={slideStyle()}>
                             <div className='slide-content-container'>
                                 <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg" : "text-in-card text-in-card-selected"}>
-                                    {item.clinic.name}
+                                    <span className='text-in-card-title'>{item.clinic.name}</span>
                                 </div>
                                 <div className={(item.clinic.id != slide) ? "desc-in-card text-in-card-reg" : "desc-in-card text-in-card-selected"}>
                                     {item.clinic.description}
                                 </div>
                             </div>
+                            
                             <div className='image-container'>
                                 {
                                     imagesArr[item.clinic.id] ? <Image className='custom-card-clinic-image'

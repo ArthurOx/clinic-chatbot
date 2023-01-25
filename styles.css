@@ -8,6 +8,24 @@ body {
     border-color: #757cce; */
 }
 
+@font-face {
+    font-family: AbrahamBold;
+    src: url(./fonts/ABRAHAMTRIAL-BOLD.OTF);
+}
+
+
+@font-face {
+    font-family: AbrahamRegular;
+    src: url(./fonts/ABRAHAMTRIAL-REGULAR.OTF);
+}
+
+
+@font-face {
+    font-family: Hadassah;
+    src: url(./fonts/HADASSAHFRIEDLAENDER-BOLD.OTF);
+}
+
+
 .react-chatbot-kit-chat-container {
     position: relative;
     width: 100vw;
@@ -78,7 +96,7 @@ body {
 }
 
 .dropdown-menu {
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
     font-size: 22px;
     font-style: normal;
     width: 320px !important;
@@ -93,7 +111,7 @@ body {
 }
 
 .react-chatbot-kit-chat-input::placeholder {
-    display: none !important; 
+    display: none !important;
     /* todo: make the text in the box invisable */
 }
 
@@ -119,7 +137,7 @@ body {
 .react-chatbot-kit-chat-bot-avatar-letter {}
 
 .react-chatbot-kit-chat-bot-message {
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
     background: #B8E5FF;
     width: fit-content;
     max-width: 70%;
@@ -134,7 +152,7 @@ body {
     justify-content: center;
     align-items: center;
     direction: inherit;
-    padding: 25px;
+    padding: 12px;
 }
 
 .react-chatbot-kit-chat-bot-message-arrow {
@@ -142,7 +160,7 @@ body {
 }
 
 .react-chatbot-kit-user-chat-message {
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
     background: #303AAA;
     border-radius: 100px 70px 0px 100px;
     width: fit-content;
@@ -153,7 +171,7 @@ body {
     line-height: 29px;
     text-align: right;
     margin-right: 5px;
-    padding: 25px;
+    padding: 12px;
 }
 
 .dropdown-item {
@@ -194,13 +212,14 @@ body {
 .free-legal-aid-logo {}
 
 .custom-btn {
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
     background-color: #303AAA;
     border: #F5F3F1;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+    font-size: 30px;
     border-radius: 20px;
     position: relative;
+    line-height: 40px;
 }
 
 .custom-lang-btn {
@@ -260,16 +279,22 @@ body {
 .intro-title {
     font-size: 50px;
     color: #303AAA;
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', Hadassah, sans-serif;
+    font-weight: 700;
     word-break: break-word;
+    letter-spacing: 0.1em;
+
+
+    /* border-style: dotted;
+    border-color: #1e0beb; */
 }
 
 .intro-item-content {}
 
 .intro-content {
     position: relative;
-    font-size: 25px;
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-size: 23px;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
     color: #303AAA;
     margin-bottom: 50px;
 }
@@ -321,10 +346,17 @@ body {
     font-size: 25px;
     align-items: center;
     background-color: transparent;
+    text-align: center !important;
+    width: auto !important;
+    display: block;
 }
 
 .accordion-button:not(.collapsed) {
     box-shadow: none;
+}
+
+.accordion-header {
+    display: block;
 }
 
 .accordion-item {
@@ -362,11 +394,13 @@ body {
 
 .accordion-body {
     background-color: transparent;
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
     font-style: normal;
     font-size: 18px;
     line-height: 90%;
     color: #303AAA;
+    line-height: 24px;
+    text-align: center !important;
 }
 
 .clickable-som:hover {
@@ -409,14 +443,14 @@ body {
 }
 
 .text-in-card {
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', AbrahamBold, sans-serif;
     font-style: normal;
     font-size: 25px;
     line-height: 93.6%;
 }
 
 .desc-in-card {
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
     font-style: normal;
     font-size: 18px;
     line-height: 93.6%;
@@ -441,12 +475,13 @@ body {
     /* right: 210px */
 }
 
-.highlight-container, .highlight {
+.highlight-container,
+.highlight {
     position: relative;
 }
-  
+
 .highlight-container {
-display: inline-block;
+    display: inline-block;
 }
 
 .highlight-container:before {
@@ -490,7 +525,7 @@ display: inline-block;
 
 .example-text {
     margin-top: 20px;
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', Hadassah, sans-serif;
     font-style: normal;
     font-size: 25px;
     line-height: 93.6%;
@@ -500,12 +535,13 @@ display: inline-block;
 
 .card-header-text {
     margin-bottom: 25px;
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', Hadassah, sans-serif;
     font-style: normal;
     font-size: 30px;
     line-height: 93.6%;
     text-align: center;
     color: #303AAA;
+    font-weight: bolder;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -514,13 +550,13 @@ display: inline-block;
 }
 
 .text-in-example {
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
     font-style: normal;
     font-size: 25px;
 }
 
 .continue-button {
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
     width: 146px;
     height: 39px;
     margin-top: 15px;
@@ -537,6 +573,7 @@ display: inline-block;
     margin-bottom: 30px;
     margin-top: 25px;
     text-align: right;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
 }
 
 .yes-button {
