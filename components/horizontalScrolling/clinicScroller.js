@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Button } from 'react-bootstrap';
 import Example from './examples';
 import Image from 'next/image';
-const CLINIC_IMAGES_PATH = '../../resources/clinic-images/'
 import image0 from '../../resources/clinic-images/C0.svg'
 import image1 from '../../resources/clinic-images/C1.svg'
 import image2 from '../../resources/clinic-images/C2.svg'
@@ -84,22 +83,23 @@ export default function ClinicScroller({ actions, textData }) {
                             key={item.clinic.id}
                             onClick={() => clickedSlide(item.clinic.id, item.clinic.name)}
                             style={slideStyle()}>
-                            <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg" : "text-in-card text-in-card-selected"}>
-                                {item.clinic.name}
+                            <div className='slide-content-container'>
+                                <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg" : "text-in-card text-in-card-selected"}>
+                                    {item.clinic.name}
+                                </div>
+                                <div className={(item.clinic.id != slide) ? "desc-in-card text-in-card-reg" : "desc-in-card text-in-card-selected"}>
+                                    {item.clinic.description}
+                                </div>
                             </div>
-                            <div className={(item.clinic.id != slide) ? "desc-in-card text-in-card-reg" : "desc-in-card text-in-card-selected"}>
-                                {item.clinic.description}
+                            <div className='image-container'>
+                                {
+                                    imagesArr[item.clinic.id] ? <Image className='custom-card-clinic-image'
+                                        alt='clinic-logo'
+                                        src={imagesArr[item.clinic.id]}>
+                                    </Image> : null
+                                } 
                             </div>
-                            {
-                                imagesArr[item.clinic.id] ? <Image className='custom-card-clinic-image'
-                                alt='clinic-logo'
-                                // src={(CLINIC_IMAGES_PATH)+"C"+(item.clinic.id)+".svg"}
-                                src={imagesArr[item.clinic.id]}
-                                // width={42.61}
-                                // height={32.76}
-                                >
-                            </Image> : null
-                            } 
+                            
                             
                         </SwiperSlide>
                     })}
