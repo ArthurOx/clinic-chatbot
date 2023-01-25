@@ -8,6 +8,24 @@ body {
     border-color: #757cce; */
 }
 
+@font-face {
+    font-family: AbrahamBold;
+    src: url(./fonts/ABRAHAMTRIAL-BOLD.OTF);
+}
+
+
+@font-face {
+    font-family: AbrahamRegular;
+    src: url(./fonts/ABRAHAMTRIAL-REGULAR.OTF);
+}
+
+
+@font-face {
+    font-family: Hadassah;
+    src: url(./fonts/HADASSAHFRIEDLAENDER-BOLD.OTF);
+}
+
+
 .react-chatbot-kit-chat-container {
     position: relative;
     width: 100vw;
@@ -277,7 +295,7 @@ body {
 .intro-title {
     font-size: 50px;
     color: #303AAA;
-    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif;
+    font-family: 'Noto Sans', Hadassah, sans-serif;
     word-break: break-word;
 
     /* border-style: dotted;
