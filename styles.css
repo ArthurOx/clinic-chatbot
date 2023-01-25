@@ -126,7 +126,11 @@ body {
     margin-bottom: 1px;
 }
 
-.react-chatbot-kit-chat-btn-send-icon {}
+.react-chatbot-kit-chat-btn-send-icon {
+    background-image: url('resources/send.svg');
+    background-size: cover;
+    fill: transparent;
+}
 
 .react-chatbot-kit-chat-bot-message-container {}
 
