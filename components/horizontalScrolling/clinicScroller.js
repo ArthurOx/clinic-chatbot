@@ -43,16 +43,29 @@ export default function ClinicScroller({ actions, textData }) {
     const contentStyle = () => {
         if (textDirection == 'rtl') {
             return {
-                'text-align': 'center',
-                'height': 'fit-content',
-                'margin-bottom': '15px',
                 'direction': 'rtl',
+                'height': 'fit-content',
+                'margin-bottom': '15px'
             }
         } else {
             return {
-                'text-align': 'center',
                 'height': 'fit-content',
                 'margin-bottom': '15px'
+            }
+        }
+    }
+
+    const titleStyle = () => {
+        if (textDirection == 'rtl') {
+            return {
+                'direction': 'rtl',
+                'textAlign': 'right',
+                'margin-right': "1em"
+            }
+        } else {
+            return {
+                'textAlign': 'left',
+                'margin-left': "1em"
             }
         }
     }
@@ -65,7 +78,7 @@ export default function ClinicScroller({ actions, textData }) {
     return (
         <>
             <hr className='separator' />
-            <div className='card-header-text'>{textData.cardHeaderText}</div>
+            <div className='card-header-text' style={titleStyle()}>{textData.cardHeaderText}</div>
             <Swiper
                 dir={textDirection}
                 slidesPerView={'auto'}
@@ -82,24 +95,24 @@ export default function ClinicScroller({ actions, textData }) {
                             onClick={() => clickedSlide(item.clinic.id, item.clinic.name)}
                             style={slideStyle()}>
                             <div className='slide-content-container'>
-                                <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg" : "text-in-card text-in-card-selected"}>
-                                    <span className='text-in-card-title'>{item.clinic.name}</span>
+                                <div className={(item.clinic.id != slide) ? "text-in-card text-in-card-reg text-in-card-title" : "text-in-card text-in-card-selected"}>
+                                    <span>{item.clinic.name}</span>
                                 </div>
                                 <div className={(item.clinic.id != slide) ? "desc-in-card text-in-card-reg" : "desc-in-card text-in-card-selected"}>
                                     {item.clinic.description}
                                 </div>
                             </div>
-                            
+
                             <div className='image-container'>
                                 {
                                     imagesArr[item.clinic.id] ? <Image className='custom-card-clinic-image'
                                         alt='clinic-logo'
                                         src={imagesArr[item.clinic.id]}>
                                     </Image> : null
-                                } 
+                                }
                             </div>
-                            
-                            
+
+
                         </SwiperSlide>
                     })}
                 </div>

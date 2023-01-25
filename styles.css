@@ -107,6 +107,9 @@ body {
 .react-chatbot-kit-chat-input-form {
     display: none;
     background-color: #F5F3F1;
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
+    font-size: 22px;
+
 }
 
 .dropdown-menu {
@@ -141,7 +144,11 @@ body {
     margin-bottom: 1px;
 }
 
-.react-chatbot-kit-chat-btn-send-icon {}
+.react-chatbot-kit-chat-btn-send-icon {
+    background-image: url('resources/send.svg');
+    background-size: cover;
+    fill: transparent;
+}
 
 .react-chatbot-kit-chat-bot-message-container {}
 
@@ -233,8 +240,8 @@ body {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 30px;
     border-radius: 20px;
-    position: relative;
     line-height: 40px;
+    position: relative;
 }
 
 .custom-lang-btn {
@@ -573,7 +580,6 @@ body {
     font-style: normal;
     font-size: 30px;
     line-height: 93.6%;
-    text-align: center;
     color: #303AAA;
     font-weight: bolder;
 }
@@ -598,6 +604,16 @@ body {
     color: #F5F3F1;
     font-size: 25px;
     border-radius: 30px;
+}
+
+.btn:disabled {
+    font-family: 'Noto Sans', AbrahamRegular, sans-serif;
+    color: #303AAA;
+    opacity: 1;
+    background-color: transparent;
+    border: 2px solid #303AAA;
+    border-radius: 30px;
+    text-shadow: none;
 }
 
 /** put everything on the right */

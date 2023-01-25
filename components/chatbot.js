@@ -14,6 +14,7 @@ export default function ChatbotPage({ props }) {
                 messageParser={MessageParser}
                 actionProvider={ActionProvider}
                 headerText={<Header />}
+                placeholderText=' '
             >
             </Chatbot>
         </div >
