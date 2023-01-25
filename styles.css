@@ -225,8 +225,8 @@ body {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 30px;
     border-radius: 20px;
-    position: relative;
     line-height: 40px;
+    position: relative;
 }
 
 .custom-lang-btn {
@@ -454,11 +454,6 @@ body {
     font-style: normal;
     font-size: 25px;
     line-height: 93.6%;
-}
-
-.text-in-card-title {
-    background-color: #B8E5FF;
-    display: inline;
 }
 
 .desc-in-card {
